@@ -96,6 +96,8 @@ build-iPhoneSimulator/
 /doc/
 /rdoc/
 
+.idea
+
 ## Environment normalization:
 /.bundle/
 /lib/bundler/man/
