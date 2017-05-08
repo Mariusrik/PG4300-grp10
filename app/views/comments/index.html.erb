@@ -5,8 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Commentid</th>
-      <th>Timestamp</th>
       <th>Content</th>
       <th>User</th>
       <th>Book</th>
@@ -17,8 +15,6 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.commentId %></td>
-        <td><%= comment.timestamp %></td>
         <td><%= comment.content %></td>
         <td><%= comment.user %></td>
         <td><%= comment.book %></td>

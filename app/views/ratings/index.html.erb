@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Ratingid</th>
       <th>Score</th>
       <th>Book</th>
       <th>User</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @ratings.each do |rating| %>
       <tr>
-        <td><%= rating.ratingId %></td>
         <td><%= rating.score %></td>
         <td><%= rating.book %></td>
         <td><%= rating.user %></td>

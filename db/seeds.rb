@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 categories_list = [
-    [1, 'Java'],
-    [2, 'Ruby on Rails'],
-    [3, 'Android'],
-    [4, 'HTML'],
-    [5, 'Javascript'],
-    [6, 'C++'],
-    [7, 'C#']
+    ['Java'],
+    ['Ruby on Rails'],
+    ['Android'],
+    ['HTML'],
+    ['Javascript'],
+    ['C++'],
+    ['C#']
 ]
 
 books_list = [
-    [1, 'Learning JavaEE7', 'Book about JavaEE7', 'java.img', 1 ],
-    [2, 'The Android Ranch', 'Book about Android development', 'android.img', 3],
-    [3, 'Agile web development with Ruby on Rails', 'Book about Ruby development', 'ruby.img', 2],
-    [4, 'Javascript is the new Stuff', 'Book about Javascript', 'js.img', 5],
-    [5, 'Developing with C#', 'C# development guide', 'csharp.img', 7]
+    ['Learning JavaEE7', 'Book about JavaEE7', 'java.img', 1 ],
+    ['The Android Ranch', 'Book about Android development', 'android.img', 3],
+    ['Agile web development with Ruby on Rails', 'Book about Ruby development', 'ruby.img', 2],
+    ['Javascript is the new Stuff', 'Book about Javascript', 'js.img', 5],
+    ['Developing with C#', 'C# development guide', 'csharp.img', 7]
 ]
 
 users_list = [
-    [1, 'Nils', 'nils@gmail.com', 'nilserbest'],
-    [2, 'Jonas', 'jonascoolman@gmail.com', 'sommer1969'],
-    [3, 'Lise', 'lise_l@hotmail.com', 'k0s3b4ms3'],
-    [4, 'Ronny', 'tanks66@gmail.com', 'Sprettert123']
+    ['Nils', 'nils@gmail.com', 'nilserbest'],
+    ['Jonas', 'jonascoolman@gmail.com', 'sommer1969'],
+    ['Lise', 'lise_l@hotmail.com', 'k0s3b4ms3'],
+    ['Ronny', 'tanks66@gmail.com', 'Sprettert123']
 ]
 
 ratings_list = [
@@ -41,18 +41,18 @@ ratings_list = [
     [8, 5, 3, 4]
 ]
 
-categories_list.each do |categoryId, name|
-  Category.create( categoryId: categoryId, name: name )
+categories_list.each do |name|
+  Category.create( name: name )
 end
 
-books_list.each do |bookId, title, description, image, category_id|
-  Book.create( bookId: bookId, title: title, description: description, image: image, category_id: category_id )
+books_list.each do |title, description, image, category_id|
+  Book.create( title: title, description: description, image: image, category_id: category_id )
 end
 
-users_list.each do |userId, name, email, password|
-  User.create(userId: userId, name: name, email: email, password: password)
+users_list.each do |name, email, password_digest|
+  User.create(name: name, email: email, password_digest: password_digest)
 end
 
-ratings_list.each do |ratingId, score, book_id, user_id|
-  Rating.create(ratingId: ratingId, score: score, book_id: book_id, user_id: user_id)
+ratings_list.each do |score, book_id, user_id|
+  Rating.create(score: score, book_id: book_id, user_id: user_id)
 end

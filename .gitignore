@@ -201,3 +201,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+!/db/migrate/20170506122424_create_users.rb
+!/app/views/categories/_category.json.jbuilder
