@@ -6,6 +6,7 @@ services:
    environment:
      PORT: 3000
    build: .
+   container_name: pg4300grp10
    command: bundle exec rails s -p 3000 -b '0.0.0.0'
    volumes:
      - .:/myapp
