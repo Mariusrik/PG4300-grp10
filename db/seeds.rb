@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 categories_list = [
-    ['Java'],
-    ['Ruby on Rails'],
-    ['Android'],
-    ['HTML'],
-    ['Javascript'],
-    ['C++'],
-    ['C#']
+    'Java',
+    'Ruby on Rails',
+    'Android',
+    'HTML',
+    'Javascript',
+    'C++',
+    'C#'
 ]
 
 books_list = [
@@ -31,14 +31,14 @@ users_list = [
 ]
 
 ratings_list = [
-    [1, 5, 2, 1],
-    [2, 3, 1, 1],
-    [3, 6, 3, 2],
-    [4, 4, 1, 2],
-    [5, 5, 5, 3],
-    [6, 6, 1, 3],
-    [7, 3, 4, 4],
-    [8, 5, 3, 4]
+    [5, 2, 1],
+    [3, 1, 1],
+    [6, 3, 2],
+    [4, 1, 2],
+    [5, 5, 3],
+    [6, 1, 3],
+    [3, 4, 4],
+    [5, 3, 4]
 ]
 
 categories_list.each do |name|

@@ -12,12 +12,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @comment.user %>
+  <%= @comment.user.name %>
 </p>
 
 <p>
   <strong>Book:</strong>
-  <%= @comment.book %>
+  <%= @comment.book.title %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
