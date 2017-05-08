@@ -3,9 +3,7 @@
   <head>
     <title>PG4300Grp10</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,6 +11,7 @@
   <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
+      <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -40,10 +39,12 @@
         </ul>
 
       </div><!-- /.navbar-collapse -->
+      </div> <!-- /.container -->
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
     <%= yield %>
   </div>
+
   </body>
 </html>
