@@ -8,12 +8,12 @@
 
 <p>
   <strong>Book:</strong>
-  <%= @rating.book %>
+  <%= @rating.book.title %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @rating.user %>
+  <%= @rating.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_rating_path(@rating) %> |
