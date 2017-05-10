@@ -14,11 +14,13 @@ class RatingsController < ApplicationController
 
   # GET /ratings/new
   def new
+    require_login
     @rating = Rating.new
   end
 
   # GET /ratings/1/edit
   def edit
+    require_login
   end
 
   # POST /ratings
@@ -54,6 +56,7 @@ class RatingsController < ApplicationController
   # DELETE /ratings/1
   # DELETE /ratings/1.json
   def destroy
+    require_login
     @rating.destroy
     respond_to do |format|
       format.html { redirect_to ratings_url, notice: 'Rating was successfully destroyed.' }

@@ -14,11 +14,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    require_login
     @category = Category.new
   end
 
   # GET /categories/1/edit
   def edit
+    require_login
   end
 
   # POST /categories

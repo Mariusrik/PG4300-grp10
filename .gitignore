@@ -203,3 +203,4 @@ Temporary Items
 
 !/db/migrate/20170506122424_create_users.rb
 !/app/views/categories/_category.json.jbuilder
+!/app/views/users/index.html.erb
