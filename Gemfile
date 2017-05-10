@@ -33,6 +33,9 @@ gem 'bcrypt'
 gem 'railties', '~> 5.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Carrierwave for imageupload and mini_magick for image manipulation
+gem 'carrierwave', '~> 1.1'
+gem 'mini_magick', '~> 4.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
