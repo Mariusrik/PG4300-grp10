@@ -31,6 +31,15 @@
     <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
   </div>
 
+    <% if current_user && current_user.user_profile == 'admin' %>
+      <div class="field">
+        <%= form.label :user_profile %>
+        <%= select_tag('user[user_profile]',
+                       raw("<option value='user'>User</option><option value='moderator'>Moderator</option><option value='admin'>Admin</option>"),
+                       {:class => 'form-control', :prompt => 'Account type'}) %>
+      </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170510144626) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_salt"
+    t.string "user_profile", default: "user"
   end
 
   add_foreign_key "books", "categories"

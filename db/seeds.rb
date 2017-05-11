@@ -24,10 +24,11 @@ books_list = [
 ]
 
 users_list = [
-    ['Nils', 'nils@gmail.com', 'nilserbest'],
-    ['Jonas', 'jonascoolman@gmail.com', 'sommer1969'],
-    ['Lise', 'lise_l@hotmail.com', 'k0s3b4ms3'],
-    ['Ronny', 'tanks66@gmail.com', 'Sprettert123']
+    ['Nils', 'nils@gmail.com', 'nilserbest', 'admin'],
+    ['Jonas', 'jonascoolman@gmail.com', 'sommer1969', 'user'],
+    ['Lise', 'lise_l@hotmail.com', 'k0s3b4ms3', 'user'],
+    ['Ronny', 'tanks66@gmail.com', 'Sprettert123', 'user'],
+    ['Per', 'per@gmail.com', 'pererbest', 'moderator']
 ]
 
 ratings_list = [
@@ -49,8 +50,8 @@ books_list.each do |title, description, image, category_id|
   Book.create( title: title, description: description, image: image, category_id: category_id )
 end
 
-users_list.each do |name, email, password_digest|
-  User.create(name: name, email: email, password_digest: password_digest)
+users_list.each do |name, email, password_digest, user_profile|
+  User.create(name: name, email: email, password_digest: password_digest, user_profile: user_profile)
 end
 
 ratings_list.each do |score, book_id, user_id|

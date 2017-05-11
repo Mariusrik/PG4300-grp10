@@ -3,7 +3,7 @@
   <head>
     <title>PG4300Grp10</title>
     <%= csrf_meta_tags %>
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -37,6 +37,7 @@
             <% if current_user %>
               <li> <%= link_to "New Book", new_book_path %></li>
               <li><%= link_to "Log out", log_out_path %></li>
+              <li><%= link_to "Profile", users_path + '/' + current_user.id.to_s %></li>
             <% else %>
               <li><%= link_to "Sign up", sign_up_path %></li>
               <li><%= link_to "Log in", log_in_path %></li>
