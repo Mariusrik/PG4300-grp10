@@ -37,6 +37,11 @@ gem 'railties', '~> 5.1'
 gem 'carrierwave', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
 
+# Google storage gems
+gem 'google-api-client', '~> 0.11.2'
+gem 'fog-google', '~> 0.5.2'
+gem 'mime-types', '~> 3.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
