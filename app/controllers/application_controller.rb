@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :set_cache_buster
   helper_method :current_user
   helper_method :require_login
+  helper_method :require_admin
+  helper_method :require_moderator
 
 
   private
@@ -13,6 +15,18 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless current_user
+      redirect_to home_url
+    end
+  end
+
+  def require_admin
+    unless current_user && current_user.user_profile.to_s == 'admin'
+      redirect_to home_url
+    end
+  end
+
+  def require_moderator
+    unless current_user && current_user.user_profile.to_s == 'moderator'
       redirect_to home_url
     end
   end
