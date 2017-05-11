@@ -1,9 +1,8 @@
 class User < ApplicationRecord
 
-  attr_accessor :password_confirmation
   before_save :encrypt_password
-
-  validates_confirmation_of :password_digest
+  validates_presence_of :password_digest_confirmation, if: :password_digest_changed?
+  validates_confirmation_of :password_digest, message: 'Password must match!'
   validates_presence_of :password_digest, :on => :create
   validates_presence_of :email
   validates_presence_of :name
