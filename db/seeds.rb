@@ -24,11 +24,11 @@ books_list = [
 ]
 
 users_list = [
-    ['Nils', 'nils@gmail.com', 'nilserbest', 'admin'],
+    ['Nils', 'nils@gmail.com', 'nilserbest1', 'admin'],
     ['Jonas', 'jonascoolman@gmail.com', 'sommer1969', 'user'],
     ['Lise', 'lise_l@hotmail.com', 'k0s3b4ms3', 'user'],
     ['Ronny', 'tanks66@gmail.com', 'Sprettert123', 'user'],
-    ['Per', 'per@gmail.com', 'pererbest', 'moderator']
+    ['Per', 'per@gmail.com', 'pererbest1', 'moderator']
 ]
 
 ratings_list = [

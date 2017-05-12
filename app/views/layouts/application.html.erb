@@ -36,7 +36,7 @@
           <li class="active"> <%= link_to "Home", home_path %> </li>
             <% if current_user %>
               <li> <%= link_to "New Book", new_book_path %></li>
-              <li><%= link_to "Log out", log_out_path %></li>
+              <li onclick="history.go(0)"><%= link_to "Log out", log_out_path %></li>
               <li><%= link_to "Profile", users_path + '/' + current_user.id.to_s %></li>
             <% else %>
               <li><%= link_to "Sign up", sign_up_path %></li>
