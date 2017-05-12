@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :ratings
+  has_many :comments
   before_save :encrypt_password
   mount_uploader :image, UserUploader
   validates_confirmation_of :password_digest, message: 'Password must match!'

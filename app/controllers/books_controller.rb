@@ -2,11 +2,12 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, :only => [:show, :index]
 
+  attr_accessor :books
+
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
-    @comments = Comment.all
   end
 
   # GET /books/1

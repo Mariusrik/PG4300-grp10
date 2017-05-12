@@ -23,7 +23,13 @@
           laborum."</p>
 
         <span class="label label-primary"><%= book.category.name %></span>
+        <span class="label">
+          <% book.ratings.each do |rating| %>
+            <% if rating.book_id == book.id %>
 
+            <% end %>
+          <% end %>
+        </span>
         <table class="pull-right">
           <tr>
             <td><%= link_to 'Les mer', book %></td>
@@ -33,7 +39,7 @@
             <% end %>
             <% if current_user %>
               <td><%= link_to 'Komentar', new_comment_path(:book => book.id) %></td>
-                <td><%= link_to 'Rate', new_rating_path(:book => book.id) %></td>
+              <td><%= link_to 'Rate', new_rating_path(:book => book.id) %></td>
             <% end %>
           </tr>
         </table>
@@ -52,7 +58,7 @@
         </thead>
 
         <tbody>
-        <% @comments.each do |comment| %>
+        <% book.comments.each do |comment| %>
           <% if comment.book_id == book.id %>
             <tr>
               <td><%= comment.content %></td>

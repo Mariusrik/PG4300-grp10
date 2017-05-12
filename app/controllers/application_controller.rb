@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login
 
+  include ActiveModel::AttributeAssignment
+
   helper_method :set_cache_buster
   helper_method :current_user
   helper_method :require_login
