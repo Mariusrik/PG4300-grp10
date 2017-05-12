@@ -1,4 +1,4 @@
-class ImageUploader < CarrierWave::Uploader::Base
+class BookUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url#(*args)
-      ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+      ActionController::Base.helpers.asset_path("fallback/book/" + [version_name, "default.png"].compact.join('_'))
   end
 
   # Create different versions of your uploaded files:
