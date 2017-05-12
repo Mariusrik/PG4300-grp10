@@ -23,7 +23,7 @@
           laborum."</p>
 
         <span class="label label-primary"><%= book.category.name %></span>
-          <span class="label label-primary" >Average score:
+          <span class="label label-primary" >Average rating:
             <%= get_avg(book.id) %>
           </span>
         <table class="pull-right">
@@ -46,9 +46,8 @@
       <table>
         <thead>
         <tr>
-          <th>Content</th>
+          <th>Comment</th>
           <th>User</th>
-          <th>Book</th>
           <th colspan="3"></th>
         </tr>
         </thead>
@@ -59,7 +58,6 @@
             <tr>
               <td><%= comment.content %></td>
               <td><%= comment.user.name %></td>
-              <td><%= comment.book.title %></td>
               <td><%= link_to 'Show', comment %></td>
               <% if current_admin %>
                   <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
