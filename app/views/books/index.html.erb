@@ -58,7 +58,10 @@
               <td><%= comment.user.name %></td>
               <td><%= comment.book.title %></td>
               <td><%= link_to 'Show', comment %></td>
-              <% if current_user %>
+              <% if current_admin %>
+                  <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+                  <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% elsif current_user && current_user.id == comment.user_id %>
                   <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
                   <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
