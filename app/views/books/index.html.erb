@@ -24,7 +24,7 @@
 
         <span class="label label-primary"><%= book.category.name %></span>
           <span class="label label-primary" >Average rating:
-            <%= get_avg(book.id) %>
+            <%= number_with_precision(get_avg(book.id), precision: 1) %>
           </span>
         <table class="pull-right">
           <tr>
