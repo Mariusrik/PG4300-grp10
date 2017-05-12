@@ -204,3 +204,4 @@ Temporary Items
 !/app/controllers/ratings_controller.rb
 !/app/views/ratings/_form.html.erb
 !/app/controllers/comments_controller.rb
+!/app/models/user.rb
