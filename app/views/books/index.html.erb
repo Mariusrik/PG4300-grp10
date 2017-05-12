@@ -23,13 +23,9 @@
           laborum."</p>
 
         <span class="label label-primary"><%= book.category.name %></span>
-        <span class="label">
-          <% book.ratings.each do |rating| %>
-            <% if rating.book_id == book.id %>
-
-            <% end %>
-          <% end %>
-        </span>
+          <span class="label label-primary" >Average score:
+            <%= get_avg(book.id) %>
+          </span>
         <table class="pull-right">
           <tr>
             <td><%= link_to 'Les mer', book %></td>
