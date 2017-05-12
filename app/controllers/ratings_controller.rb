@@ -1,6 +1,8 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :require_login, :only=>[:show]
+
   # GET /ratings
   # GET /ratings.json
   def index
