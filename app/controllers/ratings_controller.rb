@@ -16,15 +16,12 @@ class RatingsController < ApplicationController
 
   # GET /ratings/new
   def new
-    require_login
-    @users = User.all
-    @books = Book.all
     @rating = Rating.new
+    @book = params[:book]
   end
 
   # GET /ratings/1/edit
   def edit
-    require_login
   end
 
   # POST /ratings

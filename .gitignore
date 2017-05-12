@@ -202,3 +202,4 @@ Temporary Items
 .apdisk
 
 !/app/controllers/ratings_controller.rb
+!/app/views/ratings/_form.html.erb
