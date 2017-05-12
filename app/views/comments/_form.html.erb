@@ -17,15 +17,8 @@
     <%= form.text_field :content, id: :comment_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :comment_user_id, :value => current_user.id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :book_id %>
-    <%= form.text_field :book_id, id: :comment_book_id %>
-  </div>
+    <%= form.hidden_field :user_id, id: :comment_user_id, :value => current_user.id %>
+    <%= form.hidden_field :book_id, id: :comment_book_id, :value => @book %>
 
   <div class="actions">
     <%= form.submit %>
