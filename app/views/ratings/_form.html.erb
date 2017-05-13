@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :score %>
-    <%= select_tag('rating[score]', options_for_select([1,2,3,4,5,6], 3),
+    <%= select_tag('rating[score]', options_for_select([1,2,3,4,5,6], @rating.score),
                    {:class => 'form-control'}) %>
   </div>
 

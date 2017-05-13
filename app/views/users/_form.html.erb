@@ -35,8 +35,8 @@
     <div class="field">
       <%= form.label :user_profile %>
       <%= select_tag('user[user_profile]',
-                     raw("<option value='user'>User</option><option value='moderator'>Moderator</option><option value='admin'>Admin</option>"),
-                     {:class => 'form-control', :prompt => 'Account type'}) %>
+                     options_for_select(['user','moderator','admin'], @user.user_profile),
+                     {:class => 'form-control'}) %>
     </div>
   <% end %>
 
