@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
-gem 'railties', '~> 5.1'
+gem 'railties', '~> 5.1', '>= 5.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Carrierwave for imageupload and mini_magick for image manipulation
@@ -53,6 +53,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'minitest', '5.10.2'
 end
 
 group :development do
