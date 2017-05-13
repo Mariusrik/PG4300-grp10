@@ -4,8 +4,7 @@ class Book < ApplicationRecord
   has_many :comments
   mount_uploader :image, BookUploader
 
-  validates_presence_of :title
-  validates_presence_of :description
+  validates_presence_of :title, :description
   validates_uniqueness_of :title
 
 end
