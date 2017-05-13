@@ -19,6 +19,7 @@ class RatingsController < ApplicationController
   # GET /ratings/new
   def new
     @rating = Rating.new
+    @book = params[:book]
   end
 
   # GET /ratings/1/edit
