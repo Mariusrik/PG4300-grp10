@@ -35,7 +35,7 @@
             <% end %>
             <% if current_user %>
               <td><%= link_to 'Komentar', new_comment_path(:book => book.id) %></td>
-              <td><%= link_to 'Rate', new_rating_path(:book => book.id) %></td>
+              <td><%= link_to 'Rate', re_rate(book) %></td>
             <% end %>
           </tr>
         </table>
