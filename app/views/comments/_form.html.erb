@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :comment %>
-    <%= form.text_area :content, id: :comment_content %>
+    <%= form.text_area :content, id: :comment_content, :rows => 5, style: 'width:100%;' %>
   </div>
 
     <%= form.hidden_field :user_id, id: :comment_user_id, :value => current_user.id %>

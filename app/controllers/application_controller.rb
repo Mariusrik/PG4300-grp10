@@ -8,15 +8,8 @@ class ApplicationController < ActionController::Base
   helper_method :require_login
   helper_method :require_admin
   helper_method :require_moderator
-  helper_method :give_rating
   helper_method :current_admin
 
-
-  def give_rating
-    agent = Mechanize.new
-    page = agent.get(new_rating_url)
-    test_form = page.form('form')
-  end
 
   private
   def current_user

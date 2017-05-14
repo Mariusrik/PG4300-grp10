@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, :only=>[:show]
-  
+
   attr_accessor :comments, :comment
 
   # GET /comments
@@ -22,6 +22,9 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    if (@comment.user_id != current_user.id) and (current_user.user_profile != 'admin')
+      redirect_to home_path
+    end
   end
 
   # POST /comments
@@ -31,7 +34,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_back(fallback_location: home_path,notice: 'Comment was successfully created.') }
         format.js {}
         format.json { render :show, status: :created, location: @comment }
       else
@@ -46,7 +49,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_back(fallback_location: home_path,notice: 'Comment was successfully updated.') }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -60,7 +63,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: home_path,notice: 'Comment was successfully destroyed.') }
       format.json { head :no_content }
     end
   end

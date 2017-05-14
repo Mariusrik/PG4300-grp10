@@ -31,7 +31,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to home_url, notice: "User #{@user.name} was successfully created." }
+        flash[:success] = "Welcome!"
+        format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully created.") }
         format.json { render home_url }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully updated.") }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -59,7 +60,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully destroyed.") }
       format.json { head :no_content }
     end
   end
