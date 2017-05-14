@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, :only=>[:show]
-
-  attr_accessor :comments
+  
+  attr_accessor :comments, :comment
 
   # GET /comments
   # GET /comments.json
@@ -18,7 +18,6 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
-    @book = params[:book]
   end
 
   # GET /comments/1/edit
@@ -33,6 +32,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.js {}
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }

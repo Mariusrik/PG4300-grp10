@@ -21,6 +21,9 @@
   <%= @book.category.name %>
 </p>
 
+<% if current_user %>
+<%= render 'comments/form', comment: Comment.new(book_id: @book.id) %>
+<% end %>
 <% if current_admin %>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <% end %>

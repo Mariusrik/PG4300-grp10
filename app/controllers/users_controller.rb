@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     require_admin
-    @users = User.all
+    @users = User.all.order(:user_profile)
   end
 
   # GET /users/1
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to home_url, notice: 'User was successfully created.' }
+        format.html { redirect_to home_url, notice: "User #{@user.name} was successfully created." }
         format.json { render home_url }
       else
         format.html { render :new }

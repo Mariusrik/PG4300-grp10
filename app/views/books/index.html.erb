@@ -81,6 +81,9 @@
                     <!-- end panel default -->
                 <% end %>
             <% end %>
+            <% if current_user %>
+                <%= render 'comments/form', comment: Comment.new(book_id: book.id) %>
+            <% end %>
           </div>
 
         </div>
