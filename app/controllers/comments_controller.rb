@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @book = Book.find(params[:book_id])
   end
 
   # GET /comments/1/edit

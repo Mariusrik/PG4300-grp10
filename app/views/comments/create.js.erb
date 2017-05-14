@@ -1,2 +1,5 @@
 console.log("create.js.erb file");
-$("#comments").append("<%= @comment.content %>: <%= @comment.user.name %>");
+var id = '#com<%= @comment.book_id %>'
+$(id).append("<%= j render @comment %>");
+$('#comment<%= @comment.id %>').hide().fadeIn(1000)
+$("#comment_text<%= @comment.id %>").val('')

@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    @comment = Comment.new
   end
 
   # GET /books/1
