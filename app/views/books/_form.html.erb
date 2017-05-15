@@ -27,14 +27,7 @@
       <%= form.label :category_id %>
       <%= select_tag('book[category_id]', options_from_collection_for_select(Category.all, :id, :name), {:class => 'form-control'}) %>
     </div>
-    <!--
-    <div class="field">
-    <% if false %>
-        <%= form.label :image %>
-        <%= form.text_field(:image, id: :book_image, :class => 'form-control') %>
-    <% end %>
-    </div>
-    -->
+
     <div class="field well well-sm">
       <%= form.label :image %>
       <%= form.file_field :image %>

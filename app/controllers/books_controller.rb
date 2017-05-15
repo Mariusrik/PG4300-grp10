@@ -13,9 +13,9 @@ class BooksController < ApplicationController
   def re_rate(book)
     @rating_search = Rating.where(:book_id => book).where(:user_id => current_user.id)
     if @rating_search.present?
-      edit_rating_path(@rating_search.pluck(:id))
+      edit_rating_path(@rating_search.pluck(:id), :book_id => book)
     else
-      new_rating_path(:book => book)
+      new_rating_path(Rating.new(:book_id => book))
     end
   end
 
