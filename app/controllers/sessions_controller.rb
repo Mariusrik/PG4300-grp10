@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:email], params[:password_digest])
     if user
+      reset_session
       session[:user_id] = user.id
       redirect_to home_path, :notice => "Logged in!"
     else

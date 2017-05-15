@@ -1,0 +1,5 @@
+console.log("destroy.js.erb file");
+var id = document.getElementById('comment<%= @comment.id %>');
+$(id).fadeOut(1000, function() {
+    $(this).remove();
+});
