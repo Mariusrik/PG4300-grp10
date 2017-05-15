@@ -1,0 +1,36 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag book.image.thumb.url %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= book.title %></h4>
+    <p></p>
+    <p> <%= book.description %>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum."</p>
+
+    <span class="label label-primary"><%= book.category.name %></span>
+    <span class="label label-primary">Average rating:
+      <%= number_with_precision(get_avg(book.id), precision: 1) %>
+          </span>
+    <table class="pull-right">
+      <tr>
+        <td><%= link_to 'Les mer', book %></td>
+        <% if current_admin %>
+            <td><%= link_to 'Endre', edit_book_path(book) %></td>
+            <td><%= link_to 'Slett', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
+        <% if current_user %>
+            <td><%= link_to 'Rate', re_rate(book.id) %></td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -17,7 +17,7 @@
                    {:class => 'form-control'}) %>
   </div>
 
-  <%= form.hidden_field :book_id, id: :rating_book_id, :value => @book %>
+  <%= form.hidden_field :book_id, id: :rating_book_id %>
   <%= form.hidden_field :user_id, id: :rating_user_id, :value => current_user.id %>
 
   <div class="actions">
