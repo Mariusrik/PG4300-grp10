@@ -42,6 +42,9 @@ gem 'google-api-client', '~> 0.11.2'
 gem 'fog-google', '~> 0.5.2'
 gem 'mime-types', '~> 3.1'
 
+# Session timeout
+gem 'auto-session-timeout'
+
 
 # Mechanize
 gem 'mechanize'
