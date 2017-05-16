@@ -5,6 +5,7 @@ helper_method :re_rate
 
 def index
   @books = Book.all
+  @rating = Rating.new
 end
 
 def get_avg(num)

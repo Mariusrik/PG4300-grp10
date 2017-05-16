@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @comment = Comment.new
+    @rating = Rating.new
   end
 
   # GET /books/1

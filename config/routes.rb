@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :books do
     resources :comments
+    resources :ratings
   end
   resources :categories
   resources :sessions

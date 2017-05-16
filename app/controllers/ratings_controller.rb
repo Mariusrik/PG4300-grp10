@@ -36,6 +36,7 @@ class RatingsController < ApplicationController
     respond_to do |format|
       if @rating.save
         format.html { redirect_back(fallback_location: home_path,notice: 'Rating was successfully created.') }
+        format.js {}
         format.json { render :show, status: :created, location: @rating }
       else
         format.html { render :new }
