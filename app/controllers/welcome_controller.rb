@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+skip_before_action :require_login, :only => [:show, :index]
 
 helper_method :get_avg
 helper_method :re_rate
