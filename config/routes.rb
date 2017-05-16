@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'sign_up' => 'users#new', :as => 'sign_up'
   get 'sessions/new'
 
-  root :to => 'books#index', :as => 'home'
+  root :to => 'welcome#index', :as => 'home'
   resources :comments
   resources :ratings
   resources :users
@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :sessions
+  resources :welcome
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

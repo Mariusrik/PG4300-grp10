@@ -3,21 +3,6 @@ class BooksController < ApplicationController
   skip_before_action :require_login, :only => [:show, :index]
 
   attr_accessor :books
-  helper_method :get_avg
-  helper_method :re_rate
-
-  def get_avg(num)
-    @get_avg = Rating.where(:book_id => num).average(:score)
-  end
-
-  def re_rate(book)
-    @rating_search = Rating.where(:book_id => book).where(:user_id => current_user.id)
-    if @rating_search.present?
-      true
-    else
-      false
-    end
-  end
 
   # GET /books
   # GET /books.json

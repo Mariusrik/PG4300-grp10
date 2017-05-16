@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-    <%= select_tag('rating[score]', options_for_select([1,2,3,4,5,6],1),
+    <%= select_tag('rating[score]', options_for_select([1,2,3,4,5,6]),
                    {:class => 'form-control'}) %>
     <%= form.hidden_field :book_id, id: :rating_book_id %>
-    <%= form.hidden_field :user_id, id: :rating_user_id, :value => (form.object.user_id || current_user.id)%>
+    <%= form.hidden_field :user_id, id: :rating_user_id %>
 
     <td> <%= form.submit %></td>
 <% end %>
