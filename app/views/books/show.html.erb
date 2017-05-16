@@ -25,7 +25,7 @@
 <div id='com<%= @book.id %>'>
 <%= render :partial => 'comments/comment', collection:  @book.comments %>
 </div>
-<%= render 'comments/form', comment: Comment.new(book_id: @book.id) %>
+<%= render 'comments/form', comment: Comment.new(book_id: @book.id, :user_id => current_user.id) %>
 <% end %>
 <% if current_admin %>
 <%= link_to 'Edit', edit_book_path(@book) %> |

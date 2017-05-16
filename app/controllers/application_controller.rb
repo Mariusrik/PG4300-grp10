@@ -9,9 +9,14 @@ class ApplicationController < ActionController::Base
   helper_method :require_admin
   helper_method :require_moderator
   helper_method :current_admin
-
+  helper_method :get_categories
 
   private
+
+  def get_categories
+    @categories = Category.all
+  end
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   rescue ActiveRecord::RecordNotFound => e

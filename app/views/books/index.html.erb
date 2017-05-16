@@ -22,7 +22,7 @@
               <%= render :partial => 'comments/comment', collection:  book.comments %>
             </div>
             <% if current_user %>
-                <%= render 'comments/form', comment: Comment.new(:book_id => book.id) %>
+                <%= render 'comments/form', comment: Comment.new(:book_id => book.id, :user_id => current_user.id) %>
             <% end %>
         </div>
 

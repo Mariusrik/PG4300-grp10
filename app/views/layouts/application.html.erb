@@ -32,12 +32,9 @@
     <!-- sidebar -->
     <div class="navbar-collapse collapse" id="sidebar">
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">kategori1</a>
-        </li>
-        <li><a href="#">kategori2</a>
-        </li>
-        <li><a href="#">kategori3</a>
-        </li>
+        <% get_categories.each do |category| %>
+        <li><a href="<%= category_path(category.id) %>"><%= category.name %></a><span class="badge"><%= category.books.count %></span></li>
+        <% end %>
       </ul>
     </div> <!-- end sidebar -->
 

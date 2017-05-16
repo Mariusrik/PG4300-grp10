@@ -18,8 +18,8 @@
     <%= form.text_area :content, :rows => 5, style: 'width:100%;', id: 'comment_content' %>
   </div>
 
-    <%= form.hidden_field :user_id, id: :comment_user_id, :value => current_user.id %>
-    <%= form.hidden_field :book_id %>
+    <%= form.hidden_field :user_id, id: :comment_user_id %>
+    <%= form.hidden_field :book_id, id: :comment_book_id %>
 
   <div class="actions">
     <%= form.submit :class => 'btn btn-success' %>

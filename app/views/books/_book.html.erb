@@ -27,9 +27,10 @@
             <td><%= link_to 'Endre', edit_book_path(book) %></td>
             <td><%= link_to 'Slett', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
         <% end %>
-        <% if current_user %>
-            <td><%= link_to 'Rate', re_rate(book.id) %></td>
-        <% end %>
+        <% if current_user && re_rate(book.id) %>
+            <td><%= render 'ratings/form', rating: Rating.new(:book_id => book.id) %></td>
+
+      <% end %>
       </tr>
     </table>
   </div>
