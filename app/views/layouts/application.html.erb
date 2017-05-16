@@ -60,24 +60,8 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-3">
-      <!-- Just an idea <h4>Categories</h4> -->
+  <%= yield %>
 
-      <ul class="list-group">
-        <% get_categories.each do |category| %>
-            <a class="list-group-item" href="<%= category_path(category.id) %>"><%= category.name %><span class="badge"><%= category.books.count %></span></a>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-md-9">
-      <div class="panel panel-default">
-        <div class="panel-body" id="content-panel">
-          <%= yield %>
-        </div>
-      </div>
-    </div> <!-- column 9 -->
-  </div><!-- end of row -->
 </div> <!-- end of container -->
 </body>
 </html>
