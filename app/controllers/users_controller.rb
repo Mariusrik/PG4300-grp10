@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:success] = "Welcome!"
+        flash[:success] = "welcome!"
         format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully created.") }
         format.json { render home_url }
       else
