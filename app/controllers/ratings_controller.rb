@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
-
-  skip_before_action :require_login, :only=>[:show]
+  skip_before_action :require_login, :only => [:show]
 
   attr_accessor :ratings
 
