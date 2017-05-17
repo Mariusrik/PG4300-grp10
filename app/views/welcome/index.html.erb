@@ -7,7 +7,7 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-9">
-      <h1>Books</h1>
+      <h1>Books <span class="glyphicon glyphicon-envelope"></span></h1>
     </div>
   </div>
 </div>
@@ -22,14 +22,20 @@
       <% end %>
     </ul>
   </div>
+
+
   <div class="col-md-9">
+
     <div class="panel panel-default">
       <div class="panel-body" id="content-panel">
         <% @books.each do |book| %>
+            <div class="well well-sm">
+
             <%= render :partial => 'books/book', object: book %>
             <% if current_user %>
                 <td><%= render 'ratings/form', rating: Rating.new(:book_id => book.id, :user_id => current_user.id) %></td>
             <% end %>
+
             <!-- comments field -->
             <div class="panel-group" id="accordion<%= book.id %>">
               <div class="panel panel-default">
@@ -49,13 +55,14 @@
                       <%= render 'comments/form', comment: Comment.new(:book_id => book.id, :user_id => current_user.id) %>
                   <% end %>
                 </div>
-
               </div>
-            </div> <!-- end comments field -->
+              </div><!-- end comments field -->
+            </div>
             <hr>
         <% end %>
 
       </div>
     </div>
   </div> <!-- column 9 -->
+
 </div><!-- end of row -->
