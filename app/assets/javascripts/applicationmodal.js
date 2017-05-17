@@ -14,9 +14,16 @@ $(document).on('ready turbolinks:load', function() {
 });
 
 document.addEventListener("turbolinks:load", function() {
-    console.log('It works on each visit, native!');
+
+    $("#loginButton").click(function(){
+        $("#login_modal").modal();
+    });
+    $('#submit_login').click(function() {
+        $('#login_modal').modal('hide');
+    });
+
 });
 
 $( document ).on('turbolinks:load', function() {
     console.log("It works on each visit!")
-})
+});
