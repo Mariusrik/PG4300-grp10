@@ -42,7 +42,7 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion<%= book.id %>" href="#collapseSix<%= book.id %> ">
-                      (<%= book.comments.count %>)
+                      (<b id="commentcount_<%= book.id %>"><%= book.comments.count %></b>)
                       Kommentarer <b class="caret"></b>
                     </a>
                   </h4>
