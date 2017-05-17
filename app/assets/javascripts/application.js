@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require applicationmodal.js
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
