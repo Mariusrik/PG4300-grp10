@@ -16,3 +16,28 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+
+
+
+$(document).on('ready turbolinks:load', function() {
+
+    $("#loginButton").click(function(){
+        $("#login_modal").modal();
+    });
+    $('#submit_login').click(function() {
+        $('#login_modal').modal('hide');
+    });
+
+});
+
+document.addEventListener("turbolinks:load", function() {
+
+    $("#loginButton").click(function(){
+        $("#login_modal").modal();
+    });
+    $('#submit_login').click(function() {
+        $('#login_modal').modal('hide');
+    });
+
+});
