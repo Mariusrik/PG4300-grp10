@@ -6,4 +6,11 @@ class UsersTest < ApplicationSystemTestCase
   #
   #   assert_selector "h1", text: "User"
   # end
+
+  # test "visiting the index" do
+  #   visit users_creates_url
+  #
+  #   assert_selector "h1", text: "UsersCreate"
+  # end
+
 end

@@ -3,11 +3,11 @@
 one:
   title: MyString
   description: MyString
-  image: MyString
+  image: MyString.png
   category: one
 
 two:
-  title: MyString
-  description: MyString
-  image: MyString
+  title: MyString2
+  description: MyString2
+  image: MyString2.png
   category: two
