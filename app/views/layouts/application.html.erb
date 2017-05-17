@@ -34,10 +34,10 @@
           <li class="<%= 'active' if current_page?(home_path) %>"> <%= link_to 'Home', home_path %> </li>
           <% if current_admin %>
               <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to 'Users', users_path %></li>
-              <li class="<%= 'active' if current_page?(comment_path) %>"><%= link_to 'Comments', comments_path %></li>
+              <li> <%= link_to 'Comments', comments_path %></li>
               <li class="<%= 'active' if current_page?(categories_path) %>"><%= link_to 'Categories', categories_path %></li>
-              <li class="<%= 'active' if current_page?(rating_path) %>"><%= link_to 'Ratings', ratings_path %></li>
-              <li <%= 'active' if current_page?(books_path) %>"><%= link_to 'Books', books_path %></li>
+              <li><%= link_to 'Ratings', ratings_path %></li>
+              <li class="<%= 'active' if current_page?(books_path) %>"><%= link_to 'Books', books_path %></li>
           <% end %>
           <% if current_user %>
               <li class="<%= 'active' if current_page?(new_book_path) %>"> <%= link_to 'New Book', new_book_path %></li>
