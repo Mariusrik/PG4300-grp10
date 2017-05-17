@@ -2,7 +2,7 @@
  * Created by aodegaar on 17.05.2017.
  */
 
-$(document).on('turbolinks:load', function() {
+$(document).on('ready turbolinks:load', function() {
 
     $("#loginButton").click(function(){
         $("#login_modal").modal();
@@ -12,3 +12,11 @@ $(document).on('turbolinks:load', function() {
     });
 
 });
+
+document.addEventListener("turbolinks:load", function() {
+    console.log('It works on each visit, native!');
+});
+
+$( document ).on('turbolinks:load', function() {
+    console.log("It works on each visit!")
+})
