@@ -5,10 +5,7 @@ $(document).ready(function(){
     $("#loginButton").click(function(){
         $("#login_modal").modal();
     });
-});
-
-$(document).ready(function(){
-$('#submit_login').click(function() {
+    $('#submit_login').click(function() {
         $('#login_modal').modal('hide');
     });
 });

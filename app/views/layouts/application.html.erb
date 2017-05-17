@@ -51,19 +51,17 @@
           <% end %>
 
         </ul>
-
       </div><!-- end main navbar -->
-
-
     </div> <!-- end container -->
   </div> <!-- end container fluid-->
 </nav>
-
 <div class="container">
 
   <%= yield %>
 
 </div> <!-- end of container -->
+
+<%= javascript_include_tag 'applicationmodal', 'data-turbolinks-track': 'reload' %>
 
 </body>
 </html>
