@@ -46,8 +46,10 @@
 
           <% else %>
               <li><%= link_to 'Sign up', sign_up_path %></li>
-              <li><%= link_to 'Log in', log_in_path %></li>
+              <li><a id="loginButton">Log in</a></li>
+              <%= render 'sessions/form' %>
           <% end %>
+
         </ul>
 
       </div><!-- end main navbar -->
@@ -57,11 +59,11 @@
   </div> <!-- end container fluid-->
 </nav>
 
-
 <div class="container">
 
   <%= yield %>
 
 </div> <!-- end of container -->
+
 </body>
 </html>

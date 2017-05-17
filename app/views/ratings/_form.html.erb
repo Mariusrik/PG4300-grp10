@@ -12,7 +12,7 @@
   <% end %>
     <ul>
       <% (1..5).each do |i| %>
-        <span class="glyphicon glyphicon-star-empty" id=<%= "#{@rating.id}_#{i}" %>></span>
+        <span class="glyphicon-star-empty" id=<%= "#{@rating.id}_#{i}" %>></span>
       <% end %>
     </ul>
     <%= select_tag('rating[score]', options_for_select([1,2,3,4,5,6]),

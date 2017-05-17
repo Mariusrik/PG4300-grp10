@@ -21,10 +21,10 @@
   <%= @book.category.name %>
 </p>
 
-<% if current_user %>
 <div id='com<%= @book.id %>'>
 <%= render :partial => 'comments/comment', collection:  @book.comments %>
 </div>
+<% if current_user %>
 <%= render 'comments/form', comment: Comment.new(book_id: @book.id, :user_id => current_user.id) %>
 <% end %>
 <% if current_admin %>

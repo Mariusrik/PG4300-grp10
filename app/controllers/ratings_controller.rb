@@ -7,7 +7,7 @@ class RatingsController < ApplicationController
   # GET /ratings
   # GET /ratings.json
   def index
-    @ratings = Rating.all
+    @ratings = Rating.all.order(:book_id)
   end
 
   # GET /ratings/1

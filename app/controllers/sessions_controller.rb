@@ -9,15 +9,15 @@ class SessionsController < ApplicationController
     if user
       reset_session
       session[:user_id] = user.id
-      redirect_to home_path, :notice => "Logged in!"
+      redirect_to home_path, :notice => 'Logged in!'
     else
-      redirect_to log_in_path, :alert => "Invalid email or password"
+      redirect_to home_path, :notice => 'Invalid email or password'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to home_path, :notice => "Logged out!"
+    redirect_to home_path, :notice => 'Logged out!'
   end
 
 end
