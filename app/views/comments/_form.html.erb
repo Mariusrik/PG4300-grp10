@@ -1,4 +1,4 @@
-<div id="comments message"></div>
+<div id="comments message" ></div>
 <%= form_with(model: comment, :remote => true) do |form| %>
   <% if comment.errors.any? %>
     <div class="alert alert-danger" role="alert">
@@ -15,7 +15,7 @@
 
   <div class="field">
     <br>
-    <%= form.text_area :content, :rows => 5, style: 'width:100%;', class: 'comment_content' %>
+    <%= form.text_area :content, :rows => 5, style: 'width:100%;', class: 'comment_content, form-control' %>
   </div>
 
     <%= form.hidden_field :user_id, id: :comment_user_id %>

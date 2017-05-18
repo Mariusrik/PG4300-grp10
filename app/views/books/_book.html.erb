@@ -5,7 +5,9 @@
     </a>
   </div>
   <div class="media-body">
-    <h4 class="media-heading"><%= book.title %></h4>
+    <h4 class="media-heading"><%= book.title %> <small>          <% (1..5).each do |i| %>
+          <span class="glyphicon-star-empty" id=<%= "#{@rating.id}_#{i}" %>></span>
+      <% end %></small></h4>
     <p></p>
     <p> <%= book.description %>
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
