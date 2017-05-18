@@ -2,41 +2,27 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-  test "user_name_cannot_be_empty" do
+  test "user name cannot be empty" do
     user = User.new(password_digest: "validPassword123", email: "thisIs@valid.mail")
     assert user.invalid?
   end
 
-  test "user_mail_cannot_be_empty" do
+  test "user mail cannot be empty" do
     user = User.new(name: "validName", password_digest: "validPassword123")
     assert user.invalid?
   end
 
-  test "user_password_cannot_be_empty" do
+  test "user password cannot be empty" do
     user = User.new(name: "validName", email: "thisIs@valid.mail")
     assert user.invalid?
   end
 
-  test "user_should_be_created_when_name_password_mail_entered" do
-    user = User.new(name: "validName", email: "thisIs@valid.mail")
-    assert user.invalid?
+  test "user should be created when name password mail entered" do
+    user = User.new(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
+    assert user.valid?
   end
 
-  test "user_mail_cannot_be_empt" do
-    user = User.new(name: "validName", email: "thisIs@valid.mail")
-    assert user.invalid?
-
-    user2 = User.new(name: "validName", password_digest: "validPassword123")
-    assert user2.invalid?
-
-    user3 = User.new(password_digest: "validPassword123", email: "thisIs@valid.mail")
-    assert user3.invalid?
-
-    user4 = User.new(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
-    assert user4.valid?
-  end
-
-  test "email_must_be_uniqeue" do
+  test "email must be uniqeue" do
     user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
     assert user.valid?
 
@@ -44,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
     assert user2.invalid?
   end
 
-  test "format_on_email_must_be_followed" do
+  test "format on email must be followed" do
     user = User.new(name: "validName", password_digest: "validPassword123", email: "invalidMail")
     assert user.invalid?
 
@@ -55,22 +41,22 @@ class UserTest < ActiveSupport::TestCase
     assert user3.valid?
   end
 
-  test "password_must_have_atleast_one_number" do
+  test "password must have atleast one number" do
     user = User.new(name: "validName", password_digest: "invalidPassword", email: "valid@Mail.no")
     assert user.invalid?
   end
 
-  test "password_must_be_8_long" do
+  test "password must be 8 long" do
     user = User.new(name: "validName", password_digest: "toShort", email: "valid@Mail.no")
     assert user.invalid?
   end
 
-  test "password_is_valid_when_8long_and_1number" do
+  test "password is valid when 8 chars long and 1 number" do
     user = User.new(name: "validName", password_digest: "enogh123", email: "valid@Mail.no")
     assert user.valid?
   end
 
-  test "created_and_created_at_is_automaticly_added" do
+  test "created and created at is automaticly added" do
     user = User.create(name: "validName", password_digest: "enogh123", email: "valid@Mail.no")
     assert user.valid?
 
@@ -78,14 +64,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil user.updated_at
   end
 
-  test "user_profile_should_be_set_to_user_by_default" do
+  test "user profile should be set to user by default" do
     user = User.new(name: "validName", password_digest: "enogh123", email: "valid@Mail.no")
     assert user.valid?
 
     assert_equal user.user_profile, "user"
   end
 
-  test "salt_is_automaticly_added" do
+  test "salt is automaticly added" do
     user = User.create(name: "validName", password_digest: "enogh123", email: "valid@Mail.no")
     assert user.valid?
 
