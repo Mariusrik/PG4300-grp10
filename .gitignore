@@ -210,3 +210,4 @@ Temporary Items
 !/app/controllers/welcome_controller.rb
 !/app/views/ratings/update.js.erb
 !/app/assets/javascripts/applicationmodal.js
+!/app/assets/javascripts/
