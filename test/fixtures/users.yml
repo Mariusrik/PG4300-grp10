@@ -23,3 +23,11 @@ admin:
   password_salt: salt
   user_profile: admin
   image: image.png
+
+user:
+  name: admin
+  email: admin@admin.no
+  password_digest: secret
+  #password_salt: salt
+  user_profile: admin
+  image: image.png

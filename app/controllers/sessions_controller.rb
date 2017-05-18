@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # POST /session
   def create
     user = User.authenticate(params[:email], params[:password_digest])
     if user
