@@ -31,12 +31,6 @@
         <% @books.each do |book| %>
             <div class="well well-lg">
 
-              <div class="pull-right ">
-                <% if current_user %>
-                    <%= render 'ratings/form', rating: Rating.new(:book_id => book.id, :user_id => current_user.id) %>
-                <% end %>
-
-              </div>
               <br>
 
             <%= render :partial => 'books/book', object: book %>

@@ -31,7 +31,7 @@ class RatingsController < ApplicationController
   # POST /ratings.json
   def create
     @rating = Rating.new(rating_params)
-
+    @rating.user_id = current_user.id
     respond_to do |format|
       if @rating.save
         format.html { redirect_back(fallback_location: home_path,notice: 'Rating was successfully created.') }

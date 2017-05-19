@@ -1,7 +1,18 @@
 <div class="media">
-  <h3 class="media-heading text-primary border_bottom"><%= book.title %> <small><% (1..5).each do |i| %>
-        <span class="glyphicon glyphicon-star-empty" data-stars="<%= i %>" data-book-id="<%= book.id %>" id="<%= "#{book.id}_#{i}" %>"></span>
-    <% end %></small></h3>
+  <h3 class="media-heading text-primary border_bottom"><%= book.title %>
+    <% if current_user %>
+      <small id="rating">
+        <% form_id = "book_#{book.id}_rating" %>
+        <%= form_for book.ratings.find_by_user_id(current_user.id) || book.ratings.create, :html => {:id => form_id, :class => 'star_rating_form' }, :remote => true do |f| %>
+          <%= f.hidden_field :book_id %>
+          <%= f.hidden_field :score, :id => "#{form_id}_stars"  %>
+        <% end %>
+        <% (1..6).each do |i| %>
+          <span class="glyphicon glyphicon-star-empty" data-stars="<%= i %>" data-form-id="<%= form_id %>" id="<%= "#{form_id}_#{i}" %>"></span>
+        <% end %>
+      </small>
+    <% end %>
+  </h3>
   <div class="media-left">
     <a href="#">
       <%= image_tag book.image.thumb.url, :class => "book-size"%>
