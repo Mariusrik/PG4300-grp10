@@ -31,10 +31,7 @@
         <% @books.each do |book| %>
             <div class="well well-lg">
 
-              <br>
-
             <%= render :partial => 'books/book', object: book %>
-
 
               <button type="button" class="btn btn-info medium-margin-top" data-toggle="collapse" data-target="#collapse<%= book.id %>">(<b id="commentcount_<%= book.id %>"><%= book.comments.count %></b>)
                 Kommentarer <b class="caret"></b></button>
