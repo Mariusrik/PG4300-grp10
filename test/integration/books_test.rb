@@ -12,25 +12,8 @@ class BlogFlowTest < ActionDispatch::IntegrationTest
 
   end
 
-  test "can see the welcome page" do
-    get "/"
-    assert_select "h1", "Books"
-  end
-
-
-
-  test "user can login" do
-    get "/log_in"
-    assert_equal 200, status
-
-    post "/sessions", params: { email: @user_new.email, password_digest: "secret123" }
-    follow_redirect!
-    assert_equal 200, status
-    assert_equal "/", path
-
-  end
-
   test "can create a new book" do
+    # Login
     post "/sessions", params: { email: @user_new.email, password_digest: "secret123" }
 
     get "/books/new"
@@ -50,32 +33,4 @@ class BlogFlowTest < ActionDispatch::IntegrationTest
     assert_select "p", "Book was successfully created."
   end
 
-  test "can create new user" do
-    get "/sign_up"
-    assert_equal 200, status
-
-    post "/users", params: { user: { email: "mail@mail.mail", password_digest: "secret" }}
-    #follow_redirect!
-    assert_equal 200, status
-    assert_equal "/home", path
-  end
 end
-
-
-=begin
-  title: MyString
-  description: MyString
-  image: MyString.png
-  category: one
-
-  test "can create new user" do
-    get "/sign_up"
-    assert_equal 200, status
-
-    post "/users", params: { user: { email: @user_one.email, password_digest: "secret" }}
-    follow_redirect!
-    assert_equal 200, status
-    assert_equal "/home", path
-  end
-
-=end
