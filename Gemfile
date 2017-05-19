@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+# pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+
 gem 'railties', '~> 5.1', '>= 5.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
