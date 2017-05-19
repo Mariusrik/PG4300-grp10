@@ -15,7 +15,6 @@ var set_stars = function(form_id, stars) {
 
 $(document).on('turbolinks:load', function() {
     $('.glyphicon-star-empty').click(function () {
-        var star = $(this);
         var form_id = $(this).attr('data-form-id');
         var stars = $(this).attr('data-stars');
 
@@ -28,6 +27,9 @@ $(document).on('turbolinks:load', function() {
             url: $('#' + form_id).attr('action'),
             data: $('#' + form_id).serialize()
         });
+
+        $('#average_' + form_id).load(window.location.href + ' #average_' + form_id);
+
     });
 
     $('.star_rating_form').each(function() {

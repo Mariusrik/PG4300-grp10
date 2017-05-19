@@ -211,3 +211,4 @@ Temporary Items
 !/app/views/ratings/update.js.erb
 !/app/assets/javascripts/applicationmodal.js
 !/app/assets/javascripts/
+!/app/views/books/_book.html.erb

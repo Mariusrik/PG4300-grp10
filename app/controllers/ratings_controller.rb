@@ -34,7 +34,6 @@ class RatingsController < ApplicationController
     @rating.user_id = current_user.id
     respond_to do |format|
       if @rating.save
-        format.html { redirect_back(fallback_location: home_path,notice: 'Rating was successfully created.') }
         format.js {}
         format.json { render :show, status: :created, location: @rating }
       else
@@ -49,7 +48,7 @@ class RatingsController < ApplicationController
   def update
     respond_to do |format|
       if @rating.update(rating_params)
-        format.html { redirect_back(fallback_location: home_path,notice: 'Rating was successfully updated.') }
+        format.js {}
         format.json { render :show, status: :ok, location: @rating }
       else
         format.html { render :edit }

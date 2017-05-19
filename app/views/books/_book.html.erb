@@ -3,7 +3,7 @@
     <% if current_user %>
       <small id="rating">
         <% form_id = "book_#{book.id}_rating" %>
-        <%= form_for book.ratings.find_by_user_id(current_user.id) || book.ratings.create, :html => {:id => form_id, :class => 'star_rating_form' }, :remote => true do |f| %>
+        <%= form_for book.ratings.find_by_user_id(current_user.id) || book.ratings.create, :html => {:id => form_id, :class => 'star_rating_form' }, remote: true do |f| %>
           <%= f.hidden_field :book_id %>
           <%= f.hidden_field :score, :id => "#{form_id}_stars"  %>
         <% end %>
@@ -31,9 +31,10 @@
       laborum."</p>
 
     <span class="label label-primary"><%= book.category.name %></span>
-    <span class="label label-primary">Average rating:
+    <b id="average_book_<%= "#{book.id}_rating" %>">
+    <span class="label label-primary ">Average rating:
       <%= number_with_precision(get_avg(book.id), precision: 1) %>
-          </span>
+    </span></b>
     <table class="pull-right">
       <tr>
         <td><%= link_to 'Les mer', book %></td>
