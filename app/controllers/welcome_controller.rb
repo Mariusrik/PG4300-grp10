@@ -8,7 +8,7 @@ def index
 end
 
   # Sets the number of books to paginate to 2 for tesing purposes
-  WillPaginate.per_page = 2
+  WillPaginate.per_page = 3
 
 def get_avg(num)
   @get_avg = Rating.where(:book_id => num).average(:score)
