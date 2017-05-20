@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @for_sale.price %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @for_sale.contact %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @for_sale.user.name %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @for_sale.book.title %>
+</p>
+
+<%= link_to 'Edit', edit_for_sale_path(@for_sale) %> |
+<%= link_to 'Back', for_sales_path %>
