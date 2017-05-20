@@ -42,6 +42,18 @@ ratings_list = [
     [5, 3, 4]
 ]
 
+comments_list = [
+    [1, 1, 'Cool book'],
+    [4, 3, 'Horrible book'],
+    [1, 1, 'Great way to learn java enterprise!']
+]
+
+forSale_list = [
+    [1, 1, 300, 'Contact me at mail nils@gmail.com'],
+    [1, 2, 299, 'Text me at number: 12345678'],
+    [4, 3, 800, 'Contact at: lise_l@hotmail.com']
+]
+
 categories_list.each do |name|
   Category.create( name: name )
 end
@@ -56,4 +68,12 @@ end
 
 ratings_list.each do |score, book_id, user_id|
   Rating.create(score: score, book_id: book_id, user_id: user_id)
+end
+
+comments_list.each do |book_id, user_id, content|
+  Comment.create(book_id: book_id, user_id: user_id, content: content)
+end
+
+forSale_list.each do |book_id, user_id, price, contact|
+  ForSale.create(book_id: book_id, user_id: user_id, price: price, contact: contact)
 end
