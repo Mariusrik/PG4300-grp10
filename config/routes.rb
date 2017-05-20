@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :for_sales
+
   get 'log_in' => 'sessions#new', :as => 'log_in'
   get 'log_out' => 'sessions#destroy', :as => 'log_out'
   get 'sign_up' => 'users#new', :as => 'sign_up'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :sessions
   resources :welcome
+  resources :for_sales
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
