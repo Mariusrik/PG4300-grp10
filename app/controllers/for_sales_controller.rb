@@ -4,7 +4,7 @@ class ForSalesController < ApplicationController
   # GET /for_sales
   # GET /for_sales.json
   def index
-    @for_sales = ForSale.all
+    @for_sales = ForSale.all.order(:book_id)
   end
 
   # GET /for_sales/1
@@ -25,6 +25,7 @@ class ForSalesController < ApplicationController
   # POST /for_sales.json
   def create
     @for_sale = ForSale.new(for_sale_params)
+    @for_sale.user_id = current_user.id
 
     respond_to do |format|
       if @for_sale.save
