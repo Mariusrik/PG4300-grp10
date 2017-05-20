@@ -24,8 +24,9 @@
 
 
     <div class="field">
-      <%= form.label :category_id %>
-      <%= select_tag('book[category_id]', options_from_collection_for_select(Category.all, :id, :name), {:class => 'form-control'}) %>
+      <% Category.order(:name).each do |category| %>
+          <label><%= check_box_tag('book[category_ids][]', category.id, category.id.in?(book.categories.collect(&:id)), id: dom_id(category)) %> <%= category.name %></label>
+      <% end %>
     </div>
 
     <div class="field well well-sm">

@@ -16,11 +16,11 @@ categories_list = [
 ]
 
 books_list = [
-    ['Learning JavaEE7', 'Book about JavaEE7', 'java.img', 1 ],
-    ['The Android Ranch', 'Book about Android development', 'android.img', 3],
-    ['Agile web development with Ruby on Rails', 'Book about Ruby development', 'ruby.img', 2],
-    ['Javascript is the new Stuff', 'Book about Javascript', 'js.img', 5],
-    ['Developing with C#', 'C# development guide', 'csharp.img', 7]
+    ['Learning JavaEE7', 'Book about JavaEE7', 'java.img', [1] ],
+    ['The Android Ranch', 'Book about Android development', 'android.img', [1, 3]],
+    ['Agile web development with Ruby on Rails', 'Book about Ruby development', 'ruby.img', [2, 4, 5]],
+    ['Javascript is the new Stuff', 'Book about Javascript', 'js.img', [4, 5] ],
+    ['Developing with C#', 'C# development guide', 'csharp.img', [7, 6] ]
 ]
 
 users_list = [
@@ -46,8 +46,9 @@ categories_list.each do |name|
   Category.create( name: name )
 end
 
-books_list.each do |title, description, image, category_id|
-  Book.create( title: title, description: description, image: image, category_id: category_id )
+books_list.each do |title, description, image, categories |
+  Book.create( title: title, description: description, image: image, category_ids: categories )
+
 end
 
 users_list.each do |name, email, password_digest, user_profile|

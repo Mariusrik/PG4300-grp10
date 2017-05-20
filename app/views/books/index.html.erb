@@ -7,7 +7,7 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Category</th>
+    <th>Categories</th>
     <th>Created</th>
     <th>Updated</th>
     <th colspan="3"></th>
@@ -19,12 +19,16 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.description %></td>
-        <td><%= book.category_id %></td>
+        <td>
+          <% book.categories.each do |cat| %>
+            <%= cat.name %><br>
+          <% end %>
+        </td>
         <td><%= book.created_at %></td>
         <td><%= book.updated_at %></td>
         <td><%= link_to 'Show', book %></td>
         <% if current_user %>
-            <td><%= link_to 'Edit', edit_rating_path(book) %></td>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
             <td><%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>

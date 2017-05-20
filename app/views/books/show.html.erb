@@ -18,7 +18,9 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @book.category.name %>
+  <% @book.categories.each do |cat| %>
+      <%= cat.name %><b> - </b>
+  <% end %>
 </p>
 
 <div id='com<%= @book.id %>'>

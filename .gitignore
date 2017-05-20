@@ -212,3 +212,4 @@ Temporary Items
 !/app/assets/javascripts/applicationmodal.js
 !/app/assets/javascripts/
 !/app/views/books/_book.html.erb
+!/app/views/books/_form.html.erb
