@@ -4,7 +4,7 @@ class ForSalesController < ApplicationController
   # GET /for_sales
   # GET /for_sales.json
   def index
-    @for_sales = ForSale.all.order(:book_id)
+    @for_sales = @current_user.order(:book_id)
   end
 
   # GET /for_sales/1
