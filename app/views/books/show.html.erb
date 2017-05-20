@@ -21,10 +21,6 @@
   <%= @book.category.name %>
 </p>
 
-<div id='com2<%= @book.id %>'>
-  <%= render :partial => 'for_sales/for_sale', collection:  @book.for_sales %>
-</div>
-
 <div id='com<%= @book.id %>'>
 <%= render :partial => 'comments/comment', collection:  @book.comments %>
 </div>
