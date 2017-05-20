@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @comment = Comment.new
     @rating = Rating.new
+    @forSale = ForSale.new
   end
 
   # GET /books/1
