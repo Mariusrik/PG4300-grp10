@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:index]
   skip_before_action :require_login, :only=>[:new,:create]
 
 
   # GET /users
   # GET /users.json
   def index
-    require_admin
     @users = User.all.order(:user_profile)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    require_same_user(@user.id)
   end
 
   # GET /users/new
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    require_same_user(@user.id)
   end
 
   # POST /users
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success] = "welcome!"
-        format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully created.") }
+        format.html { redirect_to home_url,notice: "User #{@user.name} was successfully created." }
         format.json { render home_url }
       else
         format.html { render :new }
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    require_same_user(@user.id)
     @user.destroy
     respond_to do |format|
       format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully destroyed.") }

@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :require_moderator, only: [:edit, :update, :index]
+  before_action :require_admin, only: [:destroy]
   skip_before_action :require_login, :only => [:show, :index]
 
   attr_accessor :books
@@ -25,7 +27,6 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    require_admin
   end
 
   # POST /books
@@ -36,7 +37,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_back(fallback_location: home_path,notice: 'Book was successfully created.') }
+        format.html { redirect_to home_url,notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }

@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
+  before_action :require_moderator, only: [:index, :destroy]
   skip_before_action :require_login, :only => [:show]
 
   attr_accessor :ratings
@@ -22,9 +23,7 @@ class RatingsController < ApplicationController
 
   # GET /ratings/1/edit
   def edit
-    if (@rating.user_id != current_user.id) and (current_user.user_profile != 'admin')
-      redirect_to home_path
-    end
+    require_same_user(@rating.user_id)
   end
 
   # POST /ratings
@@ -61,7 +60,6 @@ class RatingsController < ApplicationController
   # DELETE /ratings/1
   # DELETE /ratings/1.json
   def destroy
-    require_login
     @rating.destroy
     respond_to do |format|
       format.html { redirect_back(fallback_location: home_path,notice: 'Rating was successfully destroyed.') }

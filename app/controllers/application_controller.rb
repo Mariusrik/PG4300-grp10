@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :require_moderator
   helper_method :current_admin
   helper_method :get_categories
+  helper_method :require_same_user
 
   private
 
@@ -41,7 +42,13 @@ class ApplicationController < ActionController::Base
   end
 
   def require_moderator
-    unless current_user && current_user.user_profile.to_s == 'moderator'
+    unless (current_user && current_user.user_profile.to_s == 'moderator') || current_admin
+      redirect_to home_url, notice: 'You are not authorized to access this page'
+    end
+  end
+
+  def require_same_user(user_id)
+    unless (current_user && current_user.id == user_id) || current_admin
       redirect_to home_url, notice: 'You are not authorized to access this page'
     end
   end

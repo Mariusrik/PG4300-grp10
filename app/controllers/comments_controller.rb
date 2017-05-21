@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :require_moderator, only: [:index]
   skip_before_action :require_login, :only=>[:show]
 
   attr_accessor :comments, :comment
@@ -23,9 +24,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-    if (@comment.user_id != current_user.id) and (current_user.user_profile != 'admin')
-      redirect_to home_path
-    end
+    require_same_user(@comment.user_id)
   end
 
   # POST /comments

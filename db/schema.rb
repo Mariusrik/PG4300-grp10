@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512114047) do
+ActiveRecord::Schema.define(version: 20170520135456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 20170512114047) do
     t.string "image"
   end
 
-  add_foreign_key "books", "categories"
   add_foreign_key "comments", "books"
   add_foreign_key "comments", "users"
   add_foreign_key "for_sales", "books"
