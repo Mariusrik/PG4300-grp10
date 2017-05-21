@@ -16,7 +16,7 @@
   <tbody>
     <% @for_sales.each do |for_sale| %>
       <tr>
-        <td><%= for_sale.price %></td>
+        <td><%= number_to_currency(for_sale.price, :unit => "kr ") %></td>
         <td><%= for_sale.contact %></td>
         <td><%= for_sale.user.name %></td>
         <td><%= for_sale.book.title %></td>
@@ -31,5 +31,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New For Sale', new_for_sale_path %>

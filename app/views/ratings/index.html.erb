@@ -8,7 +8,6 @@
       <th>Score</th>
       <th>Book</th>
       <th>User</th>
-      <th>User-ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= rating.score %></td>
         <td><%= rating.book.title %></td>
         <td><%= rating.user.name %></td>
-        <td><%= rating.user.id%></td>
         <td><%= link_to 'Show', rating %></td>
         <% if current_user %>
           <td><%= link_to 'Edit', edit_rating_path(rating) %></td>

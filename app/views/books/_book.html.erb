@@ -1,5 +1,6 @@
 <div class="media">
   <h3 class="media-heading text-primary border_bottom"><%= book.title %>
+    <b class="badge">(<%= count_books_for_sale(book.id) %>) for sale</b>
     <% if current_user %>
       <small id="rating">
         <% form_id = "book_#{book.id}_rating" %>
@@ -35,7 +36,7 @@
       <% end %>
     <b id="average_book_<%= "#{book.id}_rating" %>">
     <span class="label label-primary ">Average rating:
-      <%= number_with_precision(get_avg(book.id), precision: 1) %>
+      <%= number_with_precision(get_avg_rating(book.id), precision: 1) %>
     </span></b>
     <table class="pull-right">
       <tr>

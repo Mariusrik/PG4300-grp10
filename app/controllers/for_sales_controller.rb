@@ -20,6 +20,7 @@ class ForSalesController < ApplicationController
 
   # GET /for_sales/1/edit
   def edit
+    require_same_user(@for_sale.user_id)
   end
 
   # POST /for_sales

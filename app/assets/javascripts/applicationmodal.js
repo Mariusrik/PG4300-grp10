@@ -12,3 +12,14 @@ $(document).on('turbolinks:load', function() {
     });
 
 });
+
+$(document).on('turbolinks:load', function() {
+
+    $("#sell_book_btn").click(function(){
+        $("#sell_book_modal").modal();
+    });
+    $('#submit_sell_book').click(function() {
+        $('#sell_book_modal').modal('hide');
+    });
+
+});

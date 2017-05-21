@@ -10,8 +10,18 @@ class ApplicationController < ActionController::Base
   helper_method :current_admin
   helper_method :get_categories
   helper_method :require_same_user
+  helper_method :count_books_for_sale
+  helper_method :get_avg_rating
 
   private
+
+  def count_books_for_sale(book_id)
+    @get_count = ForSale.where(:book_id => book_id).count
+  end
+
+  def get_avg_rating(num)
+    @get_avg_rating = Rating.where(:book_id => num).average(:score)
+  end
 
   def get_categories
     @categories = Category.all

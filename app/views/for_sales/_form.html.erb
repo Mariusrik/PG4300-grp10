@@ -10,23 +10,17 @@
       </ul>
     </div>
   <% end %>
+      <p>
+        <%= form.label :price %><br />
+        <%= form.text_field :price %>
+      </p>
+      <p>
+        <%= form.label 'Contact information' %><br />
+        <%= form.text_area :contact %>
+      </p>
+      <%= form.hidden_field :book_id %>
+      <%= form.hidden_field :user_id %>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :for_sale_price %>
-  </div>
+      <%= form.submit 'Register book for sale', :class => 'btn btn-default', :id => 'submit_sell_book' %>
 
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_field :contact, id: :for_sale_contact %>
-  </div>
-
-  <div class="field">
-    <%= form.label :book_id %>
-    <%= form.text_field :book_id, id: :for_sale_book_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
