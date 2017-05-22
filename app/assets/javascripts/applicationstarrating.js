@@ -5,9 +5,9 @@
 var set_stars = function(form_id, stars) {
     for (var i=1; i <= 6; i++){
         if(i <= stars ) {
-            $('#' + form_id + '_' + i).addClass('glyphicon-star').removeClass('glyphicon-star-empty');
+            $('#' + form_id + '_' + i).addClass('glyphicon-star text-star').removeClass('glyphicon-star-empty');
         } else {
-            $('#' + form_id + '_' + i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+            $('#' + form_id + '_' + i).removeClass('glyphicon-star text-star').addClass('glyphicon-star-empty');
         }
     }
 };

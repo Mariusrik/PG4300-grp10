@@ -9,8 +9,4 @@ end
   # Sets the number of books to paginate to 2 for tesing purposes
   WillPaginate.per_page = 3
 
-
-
-
-
 end
