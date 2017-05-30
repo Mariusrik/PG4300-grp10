@@ -37,7 +37,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to home_url,notice: 'Book was successfully created.' }
+        format.html { redirect_to home_url, success: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class BooksController < ApplicationController
     @book.categories.push
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_back(fallback_location: home_path,notice: 'Book was successfully updated.') }
+        format.html { redirect_back(fallback_location: home_path,success: 'Book was successfully updated.') }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_back(fallback_location: home_path,notice: 'Book was successfully destroyed.') }
+      format.html { redirect_back(fallback_location: home_path,info: 'Book was successfully destroyed.') }
       format.json { head :no_content }
     end
   end

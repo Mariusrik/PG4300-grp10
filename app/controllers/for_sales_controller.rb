@@ -31,7 +31,7 @@ class ForSalesController < ApplicationController
 
     respond_to do |format|
       if @for_sale.save
-        format.html { redirect_to @for_sale, notice: 'For sale was successfully created.' }
+        format.html { redirect_to @for_sale, success: 'For sale was successfully created.' }
         format.json { render :show, status: :created, location: @for_sale }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ForSalesController < ApplicationController
   def update
     respond_to do |format|
       if @for_sale.update(for_sale_params)
-        format.html { redirect_to @for_sale, notice: 'For sale was successfully updated.' }
+        format.html { redirect_to @for_sale, success: 'For sale was successfully updated.' }
         format.json { render :show, status: :ok, location: @for_sale }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ForSalesController < ApplicationController
   def destroy
     @for_sale.destroy
     respond_to do |format|
-      format.html { redirect_to for_sales_url, notice: 'For sale was successfully destroyed.' }
+      format.html { redirect_to for_sales_url, info: 'For sale was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
 
   private
 
+  add_flash_types :success, :warning, :danger, :info
+
   def count_books_for_sale(book_id)
     @get_count = ForSale.where(:book_id => book_id).count
   end
@@ -41,25 +43,25 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless current_user
-      redirect_to home_url, notice: 'You must be logged in to access this page'
+      redirect_to home_url, warning: 'You must be logged in to access this page'
     end
   end
 
   def require_admin
     unless current_user && current_user.user_profile.to_s == 'admin'
-      redirect_to home_url, notice: 'You are not authorized to access this page'
+      redirect_to home_url, danger: 'You are not authorized to access this page'
     end
   end
 
   def require_moderator
     unless (current_user && current_user.user_profile.to_s == 'moderator') || current_admin
-      redirect_to home_url, notice: 'You are not authorized to access this page'
+      redirect_to home_url, danger: 'You are not authorized to access this page'
     end
   end
 
   def require_same_user(user_id)
     unless (current_user && current_user.id == user_id) || current_admin
-      redirect_to home_url, notice: 'You are not authorized to access this page'
+      redirect_to home_url, danger: 'You are not authorized to access this page'
     end
   end
 
