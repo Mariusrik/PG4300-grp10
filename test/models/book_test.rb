@@ -48,7 +48,7 @@ class BookTest < ActiveSupport::TestCase
     book = Book.new(title: "MyValidBook", description: "blablabla", image: "image.png")
     assert book.invalid?
 
-    book.category_id = @category_one.id
+    book.category_id = @category_one
     assert book.valid?
   end
 

@@ -5,6 +5,7 @@ class ForSalesControllerTest < ActionDispatch::IntegrationTest
     @for_sale = for_sales(:one)
   end
 
+=begin
   test "should get index" do
     get for_sales_url
     assert_response :success
@@ -45,4 +46,5 @@ class ForSalesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to for_sales_url
   end
+=end
 end
