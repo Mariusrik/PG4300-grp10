@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
 
 def index
-  @books = Book.paginate(:page => params[:page])
+  @books = Book.search(params[:search]).paginate(:page => params[:page])
 end
 
   # Sets the number of books to paginate to 3 for testing purposes

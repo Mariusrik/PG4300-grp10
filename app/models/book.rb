@@ -6,4 +6,16 @@ class Book < ApplicationRecord
   mount_uploader :image, BookUploader
   validates_presence_of :title, :description
   validates_uniqueness_of :title
+
+
+
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      where(nil)
+    end
+  end
+
+
 end
