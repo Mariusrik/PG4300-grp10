@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20170520135456) do
     t.string "title"
     t.string "description"
     t.string "image"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_books_on_category_id"
   end
 
   create_table "books_categories", id: false, force: :cascade do |t|
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170520135456) do
     t.string "image"
   end
 
+  add_foreign_key "books", "categories"
   add_foreign_key "comments", "books"
   add_foreign_key "comments", "users"
   add_foreign_key "for_sales", "books"

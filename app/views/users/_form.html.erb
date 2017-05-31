@@ -11,36 +11,29 @@
     </div>
   <% end %>
 
-    <div class="row">
 
-    <div class="field col-xs-3">
+    <div class="field limit-form-width">
     <%= form.label :name %>
     <%= form.text_field :name, id: :user_name, :class => 'form-control', :placeholder=>''%>
-  </div>
     </div>
 
-    <div class="row">
 
-    <div class="field col-xs-3">
+    <div class="field limit-form-width">
     <%= form.label :email %>
     <%= form.text_field :email, id: :user_email , :class => 'form-control', :placeholder=>''%>
   </div>
-    </div>
 
-    <div class="row">
-    <div class="field col-xs-3">
+
+    <div class="field limit-form-width">
     <%= form.label :password %>
     <%= form.password_field :password_digest, id: :password_digest , :class => 'form-control', :placeholder=>''%>
   </div>
-    </div>
 
-    <div class="row">
 
-  <div class="field col-xs-3">
+  <div class="field limit-form-width">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_digest_confirmation , :class => 'form-control', :placeholder=>''%>
   </div>
-    </div>
 
   <% if current_user && current_user.user_profile == 'admin' %>
     <div class="field col-xs-3">
