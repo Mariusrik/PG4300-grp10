@@ -6,7 +6,7 @@ def index
   @books = Book.paginate(:page => params[:page])
 end
 
-  # Sets the number of books to paginate to 2 for tesing purposes
+  # Sets the number of books to paginate to 3 for testing purposes
   WillPaginate.per_page = 3
 
 end

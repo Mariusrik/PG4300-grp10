@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success] = "welcome!"
-        format.html { redirect_to home_url,notice: "User #{@user.name} was successfully created." }
+        format.html { redirect_to home_url,success: "User #{@user.name} was successfully created." }
         format.json { render home_url }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully updated.") }
+        format.html { redirect_back(fallback_location: home_path,success: "User #{@user.name} was successfully updated.") }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     require_same_user(@user.id)
     @user.destroy
     respond_to do |format|
-      format.html { redirect_back(fallback_location: home_path,notice: "User #{@user.name} was successfully destroyed.") }
+      format.html { redirect_back(fallback_location: home_path,info: "User #{@user.name} was successfully destroyed.") }
       format.json { head :no_content }
     end
   end
