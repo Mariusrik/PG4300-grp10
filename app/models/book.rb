@@ -11,7 +11,7 @@ class Book < ApplicationRecord
 
   def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%")
+      where('title iLIKE ?', "%#{search}%")
     else
       where(nil)
     end
