@@ -12,14 +12,18 @@
     <% end %>
 
 
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field(:title, id: :book_title, :class => 'form-control') %>
+    <div class="row">
+      <div class="field col-xs-3">
+       <%= form.label :title %>
+       <%= form.text_field(:title, id: :book_title, :class => 'form-control ', :placeholder=>'Book title') %>
+      </div>
     </div>
 
-    <div class="field">
+    <div class="row">
+    <div class="field col-xs-3">
       <%= form.label :description %>
-      <%= form.text_field(:description, id: :book_description, :class => 'form-control') %>
+      <%= form.text_field(:description, id: :book_description, :class => 'form-control', :placeholder=>'Book description') %>
+    </div>
     </div>
 
 
