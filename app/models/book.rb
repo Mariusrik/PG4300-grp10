@@ -17,5 +17,14 @@ class Book < ApplicationRecord
     end
   end
 
+  def self.searchcategories(search)
+    if search != nil
+      category = Category.find(search)
+      books = category.books
+      return books
+    else
+      where(nil)
+    end
+  end
 
 end
