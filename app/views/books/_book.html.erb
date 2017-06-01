@@ -28,7 +28,7 @@
       <% end %>
     <b id="average_book_<%= "#{book.id}_rating" %>">
     <span class="label label-primary ">Average rating:
-      <%= number_with_precision(get_avg_rating(book.id), precision: 1) %><b class="glyphicon glyphicon-star"></b>
+      <%= number_with_precision(get_avg_rating(book.id), precision: 1) %> <b class="glyphicon glyphicon-star text-star"></b>
     </span></b>
     <table class="pull-right">
       <tr>
