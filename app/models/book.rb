@@ -4,7 +4,7 @@ class Book < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :for_sales, dependent: :destroy
   mount_uploader :image, BookUploader
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :categories
   validates_uniqueness_of :title
 
 
