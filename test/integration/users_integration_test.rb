@@ -14,7 +14,7 @@ class UsersFlowTest < ActionDispatch::IntegrationTest
 
   test "can see the welcome page" do
     get "/"
-    assert_select "h1", "Westerbooks Share book tips!"
+    assert_select "h1", "Syllabus Share your book tips!"
   end
 
   test "can create new user" do
