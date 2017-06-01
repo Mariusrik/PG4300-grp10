@@ -35,8 +35,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test "comment is deleted when book is deleted" do
-    newBook = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category.id)
-    assert newBook.valid?
+    newBook = @book
 
     comment = Comment.create(user_id: @user.id, book_id: newBook.id, content: "this is valid content")
     assert comment.valid?
