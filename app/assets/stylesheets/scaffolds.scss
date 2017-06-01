@@ -16,6 +16,12 @@ p, ol, ul, td {
 body{
   padding-top: 70px;
 }
+
+.modal-backdrop {
+  z-index: 0;
+}
+
+
 .glyphicon-star-empty:hover{
   color: #ffc244;
 }
