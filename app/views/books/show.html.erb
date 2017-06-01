@@ -1,28 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="well well-lg">
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @book.title %>
-</p>
+</h1>
 
 <p>
-  <strong>Description:</strong>
   <%= @book.description %>
 </p>
 
 <p>
-  <strong>Image:</strong>
   <%= image_tag @book.image.large.url %>
 </p>
 
 <p>
-  <strong>Category:</strong>
   <% @book.categories.each do |cat| %>
       <b> - </b><%= cat.name %>
   <% end %>
 </p>
 
-<div class="well well-lg">
 
   <button type="button" class="btn btn-info " data-collapse-group="collapseButtons" data-toggle="collapse" data-target="#comments_collapse<%= @book.id %>">(<b id="comment_count_<%= @book.id %>"><%= @book.comments.count %></b>)
     Book comments <b class="caret"></b></button>
