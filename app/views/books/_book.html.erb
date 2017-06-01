@@ -21,14 +21,7 @@
   <div class="media-body">
 
     <p></p>
-    <p> <%= book.description %>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-      pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-      laborum."</p>
+    <p> <%= book.description %> </p>
 
       <% book.categories.each do |cat| %>
         <span class="label label-primary"><%= cat.name %></span>
@@ -39,7 +32,7 @@
     </span></b>
     <table class="pull-right">
       <tr>
-        <td><%= link_to 'Les mer', book %></td>
+        <td><%= link_to 'Show details', book %></td>
         <% if current_admin %>
             <td><%= link_to 'Endre', edit_book_path(book) %></td>
             <td><%= link_to 'Slett', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
