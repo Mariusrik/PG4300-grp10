@@ -23,3 +23,14 @@ $(document).on('turbolinks:load', function() {
     });
 
 });
+
+$(document).on('turbolinks:load', function() {
+
+    $("[data-collapse-group='collapseButtons']").click(function () {
+        var $this = $(this);
+        $("[data-collapse-group='collapseButtons']:not([data-target='" + $this.data("target") + "'])").each(function () {
+            $($(this).data("target")).removeClass("in").addClass('collapse');
+        });
+    });
+
+});

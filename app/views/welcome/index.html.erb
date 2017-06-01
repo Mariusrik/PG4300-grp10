@@ -40,9 +40,9 @@
 
               <%= render :partial => 'books/book', object: book %>
 
-              <button type="button" class="btn btn-info medium-margin-top" data-toggle="collapse" data-target="#collapse<%= book.id %>">(<b id="commentcount_<%= book.id %>"><%= book.comments.count %></b>)
+              <button type="button" data-collapse-group="collapseButtons" class="btn btn-info medium-margin-top" data-toggle="collapse" data-target="#collapse<%= book.id %>">(<b id="commentcount_<%= book.id %>"><%= book.comments.count %></b>)
                 Comments <b class="caret"></b></button>
-              <button type="button" class="btn btn-success medium-margin-top <%= 'btn-danger' if book.for_sales.count <= 0 %>" data-toggle="collapse" data-target="#collapse_sales<%= book.id %>">(<b id="book_count_<%= book.id %>"><%= book.for_sales.count %></b>)
+              <button type="button" data-collapse-group="collapseButtons" class="btn btn-success medium-margin-top <%= 'btn-danger' if book.for_sales.count <= 0 %>" data-toggle="collapse" data-target="#collapse_sales<%= book.id %>">(<b id="book_count_<%= book.id %>"><%= book.for_sales.count %></b>)
                 Books for sale <b class="caret"></b></button>
               <!-- comments field -->
               <div id="collapse<%= book.id %>" class="panel-collapse collapse ">
