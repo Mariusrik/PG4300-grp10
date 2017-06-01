@@ -35,10 +35,9 @@ class RatingTest < ActiveSupport::TestCase
   end
 
   test "rating is deleted when book is deleted" do
-    newBook = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category.id)
-    assert newBook.valid?
+    newBook = @book
 
-    rating = Rating.new(user_id: @user.id, book_id: @book.id, score: 5)
+    rating = Rating.new(user_id: @user.id, book_id: newBook.id, score: 5)
     assert rating.valid?
 
     Book.destroy(newBook.id)

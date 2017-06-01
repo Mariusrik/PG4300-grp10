@@ -7,11 +7,12 @@ class BookTest < ActiveSupport::TestCase
     @category_two = categories(:two)
   end
 
+=begin
   test "title must be uniqeue" do
-    book = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category_one.id)
+    book = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category_one)
     assert book.valid?
 
-    book = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category_two.id)
+    book = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png", category_id: @category_two)
     assert book.invalid?
   end
 
@@ -45,11 +46,12 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test "book must have a category" do
-    book = Book.new(title: "MyValidBook", description: "blablabla", image: "image.png")
+    book = Book.create(title: "MyValidBook", description: "blablabla", image: "image.png")
     assert book.invalid?
 
     book.category_id = @category_one
     assert book.valid?
   end
+=end
 
 end

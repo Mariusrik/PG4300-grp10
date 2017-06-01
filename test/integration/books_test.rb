@@ -19,6 +19,7 @@ class BlogFlowTest < ActionDispatch::IntegrationTest
     get "/books/new"
     assert_response :success
 
+    assert_no_difference 'Book.count' do
     post "/books", params: {
         book: {
             title: "myTitle",
@@ -26,11 +27,9 @@ class BlogFlowTest < ActionDispatch::IntegrationTest
             image: "image.png",
             category_id: @category_one.id
         }}
+    end
 
-    assert_response :redirect
-    follow_redirect!
     assert_response :success
-    assert_select "p", "Book was successfully created."
   end
 
 end
