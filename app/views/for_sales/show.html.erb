@@ -1,24 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @for_sale.price %>
-</p>
+<div class="well">
 
-<p>
-  <strong>Contact:</strong>
-  <%= @for_sale.contact %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @for_sale.user.name %>
-</p>
+  <h1>
+    <%= @for_sale.book.title %>
+  </h1>
 
-<p>
-  <strong>Book:</strong>
-  <%= @for_sale.book.title %>
-</p>
 
-<%= link_to 'Edit', edit_for_sale_path(@for_sale) %> |
+<div class="row">
+<div class="col-md-5">
+
+  <table class="table ">
+
+    <thead>
+
+    <tr>
+
+      <th>
+        <strong>Price:</strong>
+      </th>
+
+      <th>
+        <strong>Contact:</strong>
+      </th>
+
+      <th>
+        <strong>User:</strong>
+      </th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr>
+      <td>
+        <%= @for_sale.price %>
+      </td>
+
+      <td>
+        <%= @for_sale.contact %>
+      </td>
+
+      <td>
+        <%= @for_sale.user.name %>
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
+</div>
+</div>
+
+  <p>
+    <%= image_tag @for_sale.book.image %>
+
+  </p>
+
+
+  <%= link_to 'Edit', edit_for_sale_path(@for_sale) %> |
 <%= link_to 'Back', for_sales_path %>
+</div>
