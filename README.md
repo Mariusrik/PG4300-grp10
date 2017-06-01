@@ -76,12 +76,12 @@ services:
 * **Use of Heroku**
 Same as with Docker, we used Heroku from the beginning. Our Heroku is connected to Git and automatically updates our running version.* AJAX
 * **Use of propper CSS**
-<write something here>
+something
 * **Testing**
 We did had fair enough focus on testing, we wanted the test cases to be as good as possible. The model testing went quite good but integration tests and system tests was way more difficult then we thought
 * **Login**
 * **Session**
-<write something here>
+something
 * **Different user rights**
 We have implmented three different usergroups: user, moderator and admin. 
 One example of the diffrence of rights between user and admin is in book/1 (show.html) where only admin can edit a book but everyone can go back
