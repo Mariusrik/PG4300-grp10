@@ -15,7 +15,7 @@
 
 <p>
   <% @book.categories.each do |cat| %>
-      <b> - </b><%= cat.name %>
+      <span class="label label-primary"><%= cat.name %></span>
   <% end %>
 </p>
 
