@@ -23,7 +23,7 @@
   <button type="button" class="btn btn-info " data-collapse-group="collapseButtons" data-toggle="collapse" data-target="#comments_collapse<%= @book.id %>">(<b id="comment_count_<%= @book.id %>"><%= @book.comments.count %></b>)
     Book comments <b class="caret"></b></button>
 
-  <button type="button" class="btn btn-info" data-collapse-group="collapseButtons" data-toggle="collapse" data-target="#collapse<%= @book.id %>">(<b id="book_count_<%= @book.id %>"><%= @book.for_sales.count %></b>)
+  <button type="button" class="btn btn-success <%= 'btn-danger' if @book.for_sales.count <= 0 %>" data-collapse-group="collapseButtons" data-toggle="collapse" data-target="#collapse<%= @book.id %>">(<b id="book_count_<%= @book.id %>"><%= @book.for_sales.count %></b>)
     Books for sale <b class="caret"></b></button>
 
   <% if current_user %>
