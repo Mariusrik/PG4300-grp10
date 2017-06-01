@@ -32,7 +32,7 @@
     </span></b>
     <table class="pull-right">
       <tr>
-        <td><%= link_to 'Les mer', book %></td>
+        <td><%= link_to 'Show details', book %></td>
         <% if current_admin %>
             <td><%= link_to 'Endre', edit_book_path(book) %></td>
             <td><%= link_to 'Slett', book, method: :delete, data: {confirm: 'Are you sure?'} %></td>
