@@ -1,13 +1,16 @@
-# README
+# PG4300 Ruby on Rails - Syllabus book webapplication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One Paragraph of project description goes here
 
-Things you may want to cover:
+## Getting Started
+
+### Prerequisites
 
 * Ruby version
 
 * System dependencies
+
+### Installing
 
 * Configuration
 
@@ -21,4 +24,15 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+## Running tests
+
+## Deployment
+
+## Built with
+
+## Authors
+
+## Licence
+
+## Acknowledgments
