@@ -18,7 +18,6 @@
         <td><%= rating.score %></td>
         <td><%= rating.book.title %></td>
         <td><%= rating.user.name %></td>
-        <td><%= link_to 'Show', rating %></td>
         <% if current_moderator %>
           <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
           <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>

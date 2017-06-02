@@ -21,7 +21,7 @@
   <div class="media-body">
 
     <p></p>
-    <p>
+    <p id="book-content-<%= book.id %>">
       <% if book.description.length > 550 %>
           <%= book.description.truncate_words(90) %>
           <%= link_to 'Read more', '', class: "read-more-#{book.id}" %>
@@ -29,7 +29,7 @@
               $('.read-more-<%= book.id %>').on('click', function(e) {
                   e.preventDefault();
                   $(this).parent().html('<%= escape_javascript book.description %>')
-              })
+              });
           </script>
       <% else %>
           <%= book.description %>
