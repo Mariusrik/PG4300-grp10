@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :require_same_user
   helper_method :count_books_for_sale
   helper_method :get_avg_rating
+  helper_method :current_moderator
 
   private
 
@@ -41,6 +42,12 @@ class ApplicationController < ActionController::Base
     @current_admin = nil
   end
 
+  def current_moderator
+    @current_moderator = current_user && ((current_user.user_profile == 'moderator') || (current_user.user_profile == 'admin'))
+  rescue ActiveRecord::RecordNotFound => e
+    @current_moderator = nil
+  end
+
   def require_login
     unless current_user
       redirect_to home_url, warning: 'You must be logged in to access this page'
@@ -60,7 +67,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_same_user(user_id)
-    unless (current_user && current_user.id == user_id) || current_admin
+    unless (current_user && current_user.id == user_id) || current_admin || current_moderator
       redirect_to home_url, danger: 'You are not authorized to access this page'
     end
   end

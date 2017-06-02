@@ -27,8 +27,10 @@
         <td><%= book.created_at %></td>
         <td><%= book.updated_at %></td>
         <td><%= link_to 'Show', book %></td>
-        <% if current_user %>
+        <% if current_moderator %>
             <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <% end %>
+        <% if current_admin %>
             <td><%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>

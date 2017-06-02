@@ -21,7 +21,7 @@
   <%= image_tag @user.image.large.url %>
 </p>
 
-<% if current_user && current_user.user_profile == 'admin' %>
+<% if current_admin %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'Back', users_path %>
 <% else %>
