@@ -200,6 +200,10 @@ end
 
 ##  Individual Contribution
 
+**Andreas Ødegaard - github: odeand14**
+
+I have been working with the project in general, creation of the Docker container deployment to heroic and maintaining the docker and git repos. I have also contributed to creating tables and page functionality. I have done the AJAX calls for comments and ratings, made the rating system, join table and functionality for books multi categories, login/session functionality and user permissions. Some styling on main page, and created login/sell book modals. 
+
 
 ## Authors
 * **Andreas Ødegaard**
