@@ -59,7 +59,8 @@ Under comes a description of how we worked with different parts of the project. 
 * **Database**
 In the project, we have used Postgres database run in own image on our computers. And on our Heroku uploaded site Heroku has also provided with Postgres. Our tests are running at a local sqlite database.
 
-![alt text](https://00e9e64bac702135f6c789d4a40b1fd8da6743049265001015-apidata.googleusercontent.com/download/storage/v1/b/pg4300grp10b/o/direct-uploads%2Ftable.png?qk=AD5uMEu6I1pIjXS6xrjX63oomMuDDkUtasc_V-089HYkKZSyphPB-cW3sGnPATuAPUkrHQ5ZpmMIBsTVYEIz4bgEM5HFbKMfTHzf0M4HYS-wBJJ0xLf_qN_mcUQtH5TZyKD5mjO47sSaR1VS3zP0MGCSJadKaWVV9NJ8lkmKZH0-MktO9-rDtBrQdEjYswS3JQevNV43zfnIsVsL6_cHYYu-2plsTX5KdZRlMgsOO8oFdlEtioCvQxmk4ZonlkZyRZFkLcrXjevcDInzrFg86WO3p5XJkycj8H2Nrf-fg0ImBOp_YpMR7C9IHSdcP1Mg8MLyqtaHLw10fRTjeabz-Qs-dAPqstnjRIJ5Rza6a7DDllAxi8lf9hvETeha5iKl4sfmt_RTT3DznwCeqm0eJ-jf-DtAmOZfE7w1Cx2eOtRCFpu-wAayA4wiydm-M-7rCnntis2HoiwW47JSK4v9spUm7BU0KIwAg1KrIHzlXEaswNMS7ALW84If7wxrhPTp_jzoP1Ks6rAU-2FYKQkvvlM9UQULHxo_iBLvdUD_c9P_CbtA0gPwV6du6uoe83gwFW67ZJUTS9RTyR3Sja6tBvToP0hxyg_S4Sn9xk7TR3ofgdGuhikWTOeREYxL-BfTI6WVdOBS8xZ-Vc-Qfp4VACGFemgy_f_d6upXhoKjBPwTW1Q9ex62ZpYnn_5JQLeELhmBBvqXsXrMaViSeZPNf16EGqWzHlgyvhX5tGsKq3OYtOx5IayRMW568UKZOLZSsuitIA2HW-aoOufjBdK1XqUF2QC1JwAB8FhmAQbQ8YO-feohUIQaDOA "Database model")
+[Link to databasemodel (Without the automaticly created id's)](https://00e9e64bac4b4cb047fbdd4c78c23f2d7d4841c2331b0f3fb9-apidata.googleusercontent.com/download/storage/v1/b/pg4300grp10b/o/direct-uploads%2Ftable.png?qk=AD5uMEup7tQurBjw9U66KAG2VvK7Y81kwkWLKMPgfDr58R6QrVpK1jqaMqtPdoQPo1wjBPVbYydCI32vi2XxOoEGT-Ayqi8vujN92Pi7RN2stMPXj2R4a144jZ4v_ZcFwNIihVy-RC5rgmHsTg5khai3lqP_zsdnazn4SKY6-LhelUxEfpCa8RPPVstFoAw7XTdIyaBrkMQEkB3n1yzqgvDQibcd6UwutXNgMKOeHXwQ_WK9oFNxwuNupejICHUfeaWKqNCCi30gQIQCqIGQlV8WCWUYd6Prc0_jtEWqStX2yU0to4Aai9ZhW4Cu_3Je3Rlw3qoeT6pmlDNWPeqKNbS-hPSo0oamfXHss88wILsD1FVeuyBI-cq9rJVGW42SYVsZXg3Qret0HM0o0Pqqg_wYQlrIXLYzfkbZuJe-LU1LvTMD9kkl_WOjMAH3C-3IHQm-fw81a-Bs97ihFx8iG2omGb1xjVptzKedpJa1I_f6Jst_TjXoxhC1KpzaX_cATQOm2qP_6Wn-OLSnueNffI6dOc8t5GXxMWj1KojpKwwlkwiAZMeKLi0118KqD82XnV4Im_f86XfClE76rYE81VPSbH9_WrOUdPkVeylWknY8cy0DuDU31zr_m5CpzoPUVSW0FQmuXP2PnfwG0Bfp27FOx6xXkaqO_4Dva2G0CBfNmYKGWimjzRCgiX5T62ojleKrHhuTC67hhSIJZrzZRsIKIDNYj-izyIMW-JLbjXmnTBQ6q2lhgqx-Or6k_o_0ztVxXIvRLki_S5tkoY-bNMJrMMG7o4lDiBujH3iXuopdcFVVcIVZ-WQ "Databasemodel")
+
 * **Controllers**
 We have implemented a total of 9 controllers divided on these 7 tables. The two others is one created (custom) for welcome page and one for session.
 * **Use of Docker**
@@ -217,10 +218,8 @@ I have mainly worked with style, navigation and pagination. I have also made rai
 Early on my focus was together with the others on planning, scaffolding and creating tables. Beside that I have focused on testing and fixed the image upload with Google Cloud. I have also done some minor fixes here and there and started on the for_sale functionality. At the end I had mainfocus on the readme/report at git and going over validation for the models. 
 
 
-## Licence
-
 ## Acknowledgments
-Book images and description is borrowed from their respective book-pages at Amazon.
+Book images and description is borrowed from their respective book-pages at Amazon. 
 * [Beginning Java EE 7](https://www.amazon.com/Beginning-Java-EE-Expert-Voice/dp/143024626X)
 * [The Android Ranch](https://www.amazon.com/Android-Programming-Ranch-Guide-Guides/dp/0321804333)
 * [Agile Web Development with Rails 5 ](https://www.amazon.com/Agile-Web-Development-Rails-5/dp/1680501712)
