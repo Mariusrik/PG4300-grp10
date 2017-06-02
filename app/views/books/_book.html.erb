@@ -21,9 +21,21 @@
   <div class="media-body">
 
     <p></p>
-    <p> <%= book.description.truncate_words(90) %> </p>
-
-      <% book.categories.each do |cat| %>
+    <p>
+      <% if book.description.length > 550 %>
+          <%= book.description.truncate_words(90) %>
+          <%= link_to 'Read more', '', class: "read-more-#{book.id}" %>
+          <script>
+              $('.read-more-<%= book.id %>').on('click', function(e) {
+                  e.preventDefault();
+                  $(this).parent().html('<%= escape_javascript book.description %>')
+              })
+          </script>
+      <% else %>
+          <%= book.description %>
+      <% end %>
+    </p>
+    <% book.categories.each do |cat| %>
         <span class="label label-primary"><%= cat.name %></span>
       <% end %>
     <b id="average_book_<%= "#{book.id}_rating" %>">

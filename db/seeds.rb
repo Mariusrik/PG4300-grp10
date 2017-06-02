@@ -2,18 +2,18 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 
-book1desc = 'Java Enterprise Edition (Java EE) continues to be one of the leading Java technologies and platforms.
+book1desc = "Java Enterprise Edition (Java EE) continues to be one of the leading Java technologies and platforms.
 Beginning Java EE 7 is the first tutorial book on Java EE 7. Step by step and easy to follow, this book describes
 many of the Java EE 7 specifications and reference implementations, and shows them in action using practical examples.
 This definitive book also uses the newest version of GlassFish to deploy and administer the code examples.
 
-/\n/Written by an expert member of the Java EE specification request and review board in the Java Community Process (JCP),
-this book contains the best information possible, from an expert’s perspective on enterprise Java technologies.'
+\nWritten by an expert member of the Java EE specification request and review board in the Java Community Process (JCP),
+this book contains the best information possible, from an expert’s perspective on enterprise Java technologies."
 
 book2desc = 'Android Programming: The Big Nerd Ranch Guide: is an introductory Android book for programmers with Java experience.
     Based on Big Nerd Ranch’s popular Android Bootcamp course, this guide will lead you through the wilderness using
 hands-on example apps combined with clear explanations of key concepts and APIs. This book focuses on practical
-techniques for developing apps compatible with all versions of Android widely used today (Android 2.2 - 4.2).
+techniques for developing apps compatible with all versions of Android widely used today (Android 2.2 - 4.2).\n
 
     Write and run code every step of the way – creating apps that catalog crime scenes, browse photos, track your
 jogging route, and more. Each chapter and app has been designed and tested to provide the knowledge and experience
