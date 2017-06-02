@@ -45,7 +45,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moderator links
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  
+
                   <% if current_admin %>
                       <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to 'Users', users_path %></li>
                   <% end %>
