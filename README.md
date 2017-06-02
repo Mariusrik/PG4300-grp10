@@ -88,7 +88,7 @@ Same as with Docker, we used Heroku from the beginning. Our Heroku is connected 
 * **AJAX**
 We use AJAX to automatically update the comment section once an user have posted a post.
 * **Use of propper CSS and Javascript**
-something
+We have used Bootstrap to make the site prettier. This makes the site friendly on both big pc-screens and smaller mobile screens. It also gives us nice opportunities like dropdown menus etc.
 * **Hashing and salting**
 When user chooses a password on creation or updating, the salt and password will be mixed before it gets hashed. The hashed value and the salt is saved in the database. 
 ```
@@ -105,9 +105,21 @@ class User < ApplicationRecord
 * **Testing**
 We used quite a lot time on writing tests, the model tests are quite complete with good coverage. The integration tests were more difficult and we only managed to write some. Also tried to write some system tests in browser, but that kind of failed.
 * **Login**
-* **Session**
-something
-
+It is possible to login and logout. When logging in its created a new session for you.
+```
+class SessionsController < ApplicationController
+...
+  def create
+    user = User.authenticate(params[:email], params[:password_digest])
+    if user
+      reset_session
+      session[:user_id] = user.id
+      redirect_to home_path, :success => 'Logged in!'
+    else
+      redirect_to home_path, :warning => 'Invalid email or password'
+    end
+  end
+```
 
 * **Different user rights**
 We have implmented three different usergroups: user, moderator and admin. 
@@ -158,7 +170,7 @@ class Book < ApplicationRecord
 
 
 ## Used libraries/sources/gems
-Following is a list over gems and other sources used in our project with a short description of what they have been used for in our project.
+Following is a list over gems and other sources used in our project, with a short description of what they have been used for.
 
 ### Pagination
 Used to limit the number of books shown at frontpage. This example sets the max number of books to 3.
@@ -173,10 +185,10 @@ end
 ```
 
 ### Carrierwave
-Dealing with the imageupload from form to Google Cloud.
+Dealing with the imageupload from form on webpage to Google Cloud.
 
 ### Google-api-client
-Due to Heroku working on different dynos, images uploaded by user will be reset on every new upload to Heroku - which will reset all previous updated data - to prevent this we only save a link in user's table to an image location saved on Google Cloud. The config for that looks like this:
+Due to Heroku working on different dynos, dyno will reset on every new upload to Heroku - which will reset all previous updated data. To prevent this we only save a link in user's table to an image location saved on Google Cloud. The config for that looks like this:
 ```
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/google'

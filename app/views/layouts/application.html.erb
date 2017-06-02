@@ -3,13 +3,9 @@
 <head>
   <title>Syllabus</title>
   <%= csrf_meta_tags %>
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <%= favicon_link_tag 'book_flat.ico' %>
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
@@ -42,7 +38,8 @@
 
           <% if current_moderator %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moderator links
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moderator
+                  links
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu">
 
@@ -58,8 +55,6 @@
                 </ul>
               </li>
           <% end %>
-
-
 
           <% if current_user %>
               <li class="<%= 'active' if current_page?(new_book_path) %>"> <%= link_to 'New Book', new_book_path %></li>
