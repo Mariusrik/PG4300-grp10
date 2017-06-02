@@ -4,6 +4,9 @@ This project is the main exam in our course PG4300 Ruby on Rails on Westerdals O
 ### Heroku link
 [Our Heroku page](https://ruby-book-project.herokuapp.com/ "Our Heroku")
 
+###
+Login to users
+
 ## Getting Started
 Due to one of the requirements that was to use Docker with this project, it should be quite easy to get it up and running on your own. Just follow these steps.
 
@@ -39,17 +42,18 @@ The following command needs to be ran from another prompt than where the docker-
   docker-compose run web rails db:migrate db:seed
 ```
 
-#### How to run the test suite
+#### How to run the tests
 ```
   docker-compose run web rails test
 ```
 
 ## Project report
 Under comes a description of how we worked with different parts of the project. And the result from this.
+
 * **Database**
 In the project we have used postgres database run in own image on our computers and hosted by heroku on the uploaded version. Our tests is ran at a local sqlite database.
 
-![alt text](https://00e9e64bac98adb8c29cea90b4ec594bb90bb2a2f45997288e-apidata.googleusercontent.com/download/storage/v1/b/pg4300grp10b/o/direct-uploads%2Ftable.png?qk=AD5uMEso7pll6lgqaGB3iWkunucUHbUqJOzGuqStOgKHD5vDktcpcaPLVa4gnCwjMDZMg01pOv7nv0Lee5QlbdHZF_d1yAsXsWosxrrp1gqagletbIQT2fFiNrUs70YkugDLcP5QR8omBWOAGoYDnpsK-wuAjFFet757Ta9vlHC-1opDnn7u9Dsbz9YrAb3_ft4dKSG1H3e-u-jBJJjLTJvn0re2bEnhx_VaIFNpuwwNilG7X_CTwJjfKbKYZ9QNpMPFVzUxgTLPfxWANxoIAvvmz68XCq_lnr6yPEzYiXUN432X5ulTaqMPC5vf6F8vNkuEiD_mhQuu0_cVESAIsz7qYOcWLKP_Nh9i67b254TDjkMkwygoJaO_HqqsDA9wSCbvmjQFGEMQDFqgeMvSk4XZM5NEbWNA7rAOpYsxxWg_VbgGKKAGntnJliCce8E0IEWudPfplAZajLF_lSWX8nLfjFC_eIflsAYYXC5ei_INQnJ2JUEBtTiwHrkxnrTQ4gC_Dv5WB5AqyvhMFC-f4XqkwXTrISdihcLoaPKlMdlb38Ii8wO5M4yV7kFiTyALHbW1v5oGsYdJSpULsR1e4rOU5KtFOVNr6r8Irr_j8g5omyg8AfOZUl9Ik8RqanDbnZ_SnDFDVVbAjLFW2lP2BSauKFjVHxw1j_oqjJ3D4i61kJN7d8RudAL5NkQefIRptZKcNiNLKGvxJ3LWdbHPL2K3qMa0uG4UG3dUqlW8tlYi73KKRzQOW2YEKaJ8R3skP0ikbnOLIuP4SzzuYXOtwcHpZ8PGeehIM-fJuLTuVgGoQ83w09J5BJ8 "Database model")
+![alt text](https://00e9e64bac702135f6c789d4a40b1fd8da6743049265001015-apidata.googleusercontent.com/download/storage/v1/b/pg4300grp10b/o/direct-uploads%2Ftable.png?qk=AD5uMEu6I1pIjXS6xrjX63oomMuDDkUtasc_V-089HYkKZSyphPB-cW3sGnPATuAPUkrHQ5ZpmMIBsTVYEIz4bgEM5HFbKMfTHzf0M4HYS-wBJJ0xLf_qN_mcUQtH5TZyKD5mjO47sSaR1VS3zP0MGCSJadKaWVV9NJ8lkmKZH0-MktO9-rDtBrQdEjYswS3JQevNV43zfnIsVsL6_cHYYu-2plsTX5KdZRlMgsOO8oFdlEtioCvQxmk4ZonlkZyRZFkLcrXjevcDInzrFg86WO3p5XJkycj8H2Nrf-fg0ImBOp_YpMR7C9IHSdcP1Mg8MLyqtaHLw10fRTjeabz-Qs-dAPqstnjRIJ5Rza6a7DDllAxi8lf9hvETeha5iKl4sfmt_RTT3DznwCeqm0eJ-jf-DtAmOZfE7w1Cx2eOtRCFpu-wAayA4wiydm-M-7rCnntis2HoiwW47JSK4v9spUm7BU0KIwAg1KrIHzlXEaswNMS7ALW84If7wxrhPTp_jzoP1Ks6rAU-2FYKQkvvlM9UQULHxo_iBLvdUD_c9P_CbtA0gPwV6du6uoe83gwFW67ZJUTS9RTyR3Sja6tBvToP0hxyg_S4Sn9xk7TR3ofgdGuhikWTOeREYxL-BfTI6WVdOBS8xZ-Vc-Qfp4VACGFemgy_f_d6upXhoKjBPwTW1Q9ex62ZpYnn_5JQLeELhmBBvqXsXrMaViSeZPNf16EGqWzHlgyvhX5tGsKq3OYtOx5IayRMW568UKZOLZSsuitIA2HW-aoOufjBdK1XqUF2QC1JwAB8FhmAQbQ8YO-feohUIQaDOA "Database model")
 * **Controllers**
 We have implementet a total of 9 controllers divived on these 7 tables. The two others is one specialcreated (custom) for welcomepage and one for session.
 * **Use of Docker**
@@ -91,6 +95,44 @@ One example of the diffrence of rights between user and admin is in book/1 (show
   <% end %>
   <%= link_to 'Back', _back_url %>
 ```
+* **Search**
+We have implemented a searchfunction that allows you to search for books based on title. This search is not case-sensitive. The results will show on the frontpage.
+
+* **Categories has and belongs to many books**
+A book must have one and can have many categories, meanwhile a category can have many books. This creates a many-to-many relationship which we solved in the following way:
+```
+schema.rb:
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  create_table "books_categories", id: false, force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["book_id", "category_id"], name: "index_books_categories_on_book_id_and_category_id"
+    t.index ["category_id", "book_id"], name: "index_books_categories_on_category_id_and_book_id"
+  end
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  ```
+
+* **Validation**
+All models has been given validations. These focus on a width specter of validations, from length and uniqueness to format and confirmation. Example on this is:
+```
+class Book < ApplicationRecord
+  ...
+  validates_presence_of :title, :description, :categories
+  validates_uniqueness_of :title
+  validates_length_of :title, :maximum => 80
+```
+* **Anything else we wanna describe short?**
+
 
 ## Used libraries/sources/gems
 Following is a list over gems and other sources used in our project with a short description of what they have been used for in our project.
