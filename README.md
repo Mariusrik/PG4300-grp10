@@ -197,20 +197,10 @@ CarrierWave.configure do |config|
 end
 ```
 
-### Auto-session-timeout
-
 
 ## Authors
-* **Marius Rikheim**
 * **Andreas Ødegaard**
-* **Thomas René Gabrielsen**
-
-### Auto-session-timeout
-
-
-## Authors
 * **Marius Rikheim**
-* **Andreas Ødegaard**
 * **Thomas René Gabrielsen**
 
 ## Licence
