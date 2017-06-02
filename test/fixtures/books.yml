@@ -4,10 +4,8 @@ one:
   title: MyString
   description: MyString
   image: MyString.png
-  category_id: one
 
 two:
   title: MyString2
   description: MyString2
   image: MyString2.png
-  category_id: two
