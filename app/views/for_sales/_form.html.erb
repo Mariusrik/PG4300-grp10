@@ -10,16 +10,20 @@
           </ul>
         </div>
     <% end %>
+
     <p>
-      <%= form.label :price %><br/>
-      <%= form.text_field :price %>
+      <%= form.label :price %>
+      <%= form.text_field :price , :class=>"form-control limit-form-width"%>
     </p>
+
     <p>
-      <%= form.label 'Contact information' %><br/>
-      <%= form.text_area :contact %>
+      <%= form.label 'Contact information' %>
+      <%= form.text_area :contact , :class=>"form-control", :rows=>"5"%>
     </p>
-    <%= form.hidden_field :book_id %>
-    <%= form.hidden_field :user_id %>
+
+      <%= form.hidden_field :book_id %>
+
+      <%= form.hidden_field :user_id%>
 
     <%= form.submit 'Register book for sale', :class => 'btn btn-default', :id => 'submit_sell_book' %>
 
