@@ -197,8 +197,12 @@ CarrierWave.configure do |config|
 end
 ```
 
+## Authors
+* **Andreas Ødegaard**
+* **Marius Rikheim**
+* **Thomas René Gabrielsen**
 
-##  Individual Contribution
+## Individual Contribution
 
 **Andreas Ødegaard - github: odeand14**
 
@@ -208,11 +212,9 @@ I have been working with the project in general, creation of the Docker containe
 
 I have mainly worked with style, navigation and pagination. I have also made rails warnings with individual tags for style. Created search functionality and sorting by tag. In addition to adding bootstrap, making it work with rails, and generally fixing bootstrap issues.  
 
+**Thomas Gabrielsen - github: gabtho15**
+Early on my focus was together with the others on planning, scaffolding and creating tables. Beside that I have focused on testing and fixed the image upload with Google Cloud. I have also done some minor fixes here and there and started on the for_sale functionality. At the end I had mainfocus on the readme/report at git and going over validation for the models. 
 
-## Authors
-* **Andreas Ødegaard**
-* **Marius Rikheim**
-* **Thomas René Gabrielsen**
 
 ## Licence
 
