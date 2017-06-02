@@ -4,8 +4,14 @@ This project is the main exam in our course PG4300 Ruby on Rails on Westerdals O
 ### Heroku link
 [Our Heroku page](https://ruby-book-project.herokuapp.com/ "Our Heroku")
 
-###
-Login to users
+### Site users
+We created premade users using seed, these logininfo can be found in the seed file. Here is three of them with different roles:
+
+Role | Mail | Password
+--- | --- | ---
+admin | nils@gmail.com | nilserbest1
+moderator | per@gmail.com | pererbest1
+user | jonascoolman@gmail.com | sommer1969
 
 ## Getting Started
 Due to one of the requirements that was to use Docker with this project, it should be quite easy to get it up and running on your own. Just follow these steps.
@@ -79,13 +85,28 @@ services:
 
 * **Use of Heroku**
 Same as with Docker, we used Heroku from the beginning. Our Heroku is connected to Git and automatically updates our running version.* AJAX
-* **Use of propper CSS**
+* **Use of propper CSS and Javascript**
 something
+* **Hashing and salting**
+When user chooses a password on creation or updating, the salt and password will be mixed before it gets hashed. The hashed value and the salt is saved in the database. 
+```
+class User < ApplicationRecord
+  ...
+  private
+  def encrypt_password
+    if password_digest.present?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_digest = BCrypt::Engine.hash_secret(password_digest, password_salt)
+    end
+  end
+ ```
 * **Testing**
 We did had fair enough focus on testing, we wanted the test cases to be as good as possible. The model testing went quite good but integration tests and system tests was way more difficult then we thought
 * **Login**
 * **Session**
 something
+
+
 * **Different user rights**
 We have implmented three different usergroups: user, moderator and admin. 
 One example of the diffrence of rights between user and admin is in book/1 (show.html) where only admin can edit a book but everyone can go back
