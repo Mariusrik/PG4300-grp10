@@ -206,13 +206,14 @@ end
 
 **Andreas Ødegaard - github: odeand14**
 
-I have been working with the project in general, creation of the Docker container deployment to heroic and maintaining the docker and git repos. I have also contributed to creating tables and page functionality. I have done the AJAX calls for comments and ratings, made the rating system, join table and functionality for books multi categories, login/session functionality and user permissions. Some styling on main page, and created login/sell book modals. 
+I have been working with the project in general, creation of the Docker container deployment to Heroku and maintaining the Heroku and git repos. I have also contributed to creating tables and page functionality. I have done the AJAX calls for comments and ratings, made the rating system, join table and functionality for books multi categories, login/session functionality and user permissions. Some styling on main page, and created login/sell book modals. 
 
 **Marius Rikheim - github: rikmar15**
 
 I have mainly worked with style, navigation and pagination. I have also made rails warnings with individual tags for style. Created search functionality and sorting by tag. In addition to adding bootstrap, making it work with rails, and generally fixing bootstrap issues.  
 
 **Thomas Gabrielsen - github: gabtho15**
+
 Early on my focus was together with the others on planning, scaffolding and creating tables. Beside that I have focused on testing and fixed the image upload with Google Cloud. I have also done some minor fixes here and there and started on the for_sale functionality. At the end I had mainfocus on the readme/report at git and going over validation for the models. 
 
 
