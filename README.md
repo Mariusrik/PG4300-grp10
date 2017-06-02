@@ -166,8 +166,6 @@ class Book < ApplicationRecord
   validates_uniqueness_of :title
   validates_length_of :title, :maximum => 80
 ```
-* **Anything else we wanna describe short?**
-
 
 ## Used libraries/sources/gems
 Following is a list over gems and other sources used in our project, with a short description of what they have been used for.
@@ -207,6 +205,20 @@ end
 * **Andreas Ødegaard**
 * **Thomas René Gabrielsen**
 
+### Auto-session-timeout
+
+
+## Authors
+* **Marius Rikheim**
+* **Andreas Ødegaard**
+* **Thomas René Gabrielsen**
+
 ## Licence
 
 ## Acknowledgments
+Book images and description is borrowed from their respective book-pages at Amazon.
+* [Beginning Java EE 7](https://www.amazon.com/Beginning-Java-EE-Expert-Voice/dp/143024626X)
+* [The Android Ranch](https://www.amazon.com/Android-Programming-Ranch-Guide-Guides/dp/0321804333)
+* [Agile Web Development with Rails 5 ](https://www.amazon.com/Agile-Web-Development-Rails-5/dp/1680501712)
+* [JavaScript in 24 Hours, Sams Teach Yourself](https://www.amazon.com/JavaScript-Hours-Sams-Teach-Yourself/dp/0672336081)
+* [he C# Player's Guide (3rd Edition)](https://www.amazon.com/C-Players-Guide-3rd/dp/0985580135)
