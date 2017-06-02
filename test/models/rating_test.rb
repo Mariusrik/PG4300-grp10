@@ -40,7 +40,7 @@ class RatingTest < ActiveSupport::TestCase
 
   test "rating is deleted when book is deleted" do
     newBook = @book
-    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail", user_profile: "admin")
 
     rating = Rating.new(user_id: user.id, book_id: newBook.id, score: 5)
     assert rating.valid?
