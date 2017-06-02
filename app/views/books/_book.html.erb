@@ -21,7 +21,7 @@
   <div class="media-body">
 
     <p></p>
-    <p> <%= book.description %> </p>
+    <p> <%= book.description.truncate_words(90) %> </p>
 
       <% book.categories.each do |cat| %>
         <span class="label label-primary"><%= cat.name %></span>
