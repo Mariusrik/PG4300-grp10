@@ -47,7 +47,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test "comment is not deleted when user is deleted" do
-    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail", user_profile: "admin")
     assert user.valid?
 
     comment = Comment.create(user_id: user.id, book_id: @book.id, content: "this is valid content")
