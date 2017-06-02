@@ -35,7 +35,7 @@
     <%= form.password_field :password_digest_confirmation , :class => 'form-control', :placeholder=>''%>
   </div>
 
-  <% if current_user && current_user.user_profile == 'admin' %>
+  <% if current_admin %>
     <div class="field col-xs-3">
       <%= form.label :user_profile %>
       <%= select_tag('user[user_profile]',
