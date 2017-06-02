@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :require_moderator, only: [:edit, :update, :index]
   before_action :require_admin, only: [:destroy]
-  skip_before_action :require_login, :only => [:show, :index]
+  skip_before_action :require_login, :only => [:show]
 
   attr_accessor :books
 

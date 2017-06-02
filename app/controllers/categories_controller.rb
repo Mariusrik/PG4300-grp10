@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :require_moderator, only: [:index, :edit, :update, :destroy, :new, :create]
-  skip_before_action :require_login, :only=>[:show]
 
   # GET /categories
   # GET /categories.json

@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :require_moderator, only: [:index]
-  skip_before_action :require_login, :only=>[:show]
 
   attr_accessor :comments, :comment
 

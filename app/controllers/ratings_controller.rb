@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   before_action :require_moderator, only: [:index, :destroy]
-  skip_before_action :require_login, :only => [:show]
 
   attr_accessor :ratings
 
@@ -23,7 +22,7 @@ class RatingsController < ApplicationController
 
   # GET /ratings/1/edit
   def edit
-    require_same_user(@rating.user_id)
+    require_same_user(@rating.user_id) || require_moderator
   end
 
   # POST /ratings

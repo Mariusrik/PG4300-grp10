@@ -21,7 +21,7 @@
         <td><%= for_sale.user.name %></td>
         <td><%= for_sale.book.title %></td>
         <td><%= link_to 'Show', for_sale %></td>
-        <% if current_admin || (current_user.id == for_sale.user_id) %>
+        <% if current_moderator || (current_user.id == for_sale.user_id) %>
             <td><%= link_to 'Edit', edit_for_sale_path(for_sale) %></td>
             <td><%= link_to 'Destroy', for_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
