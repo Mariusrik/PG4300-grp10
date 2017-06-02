@@ -204,6 +204,10 @@ end
 
 I have been working with the project in general, creation of the Docker container deployment to heroic and maintaining the docker and git repos. I have also contributed to creating tables and page functionality. I have done the AJAX calls for comments and ratings, made the rating system, join table and functionality for books multi categories, login/session functionality and user permissions. Some styling on main page, and created login/sell book modals. 
 
+**Marius Rikheim - github: rikmar15**
+
+I have mainly worked with style, navigation and pagination. I have also made rails warnings with individual tags for style. Created search functionality and sorting by tag. In addition to adding bootstrap, making it work with rails, and generally fixing bootstrap issues.  
+
 
 ## Authors
 * **Andreas Ødegaard**
