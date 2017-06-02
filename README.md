@@ -5,7 +5,7 @@ This project is the main exam in our course PG4300 Ruby on Rails on Westerdals O
 [Our Heroku page](https://ruby-book-project.herokuapp.com/ "Our Heroku")
 
 ### Site users
-We created premade users using seed, these logininfo can be found in the seed file. Here is three of them with different roles:
+We created premade users using seed, these login info can be found in the seed file. Here is three of them with different roles:
 
 Role | Mail | Password
 --- | --- | ---
@@ -19,7 +19,7 @@ Due to one of the requirements that was to use Docker with this project, it shou
 ### Prerequisites
 * General knowledge about Docker and how to install this yourself
 * System dependencies
-..*None, beside Docker dependencies
+None, beside Docker dependencies
 
 ### Installing
 * Download Docker and complete it's installation
@@ -28,7 +28,7 @@ Due to one of the requirements that was to use Docker with this project, it shou
 Noone :) 
 
 #### Deployment instructions
-To deploy the application on your local machine, use commandpromt/bash to locate your project folder. Tehn make sure port 3000 is free to use, if not change the port in docker-compose.yml. From inside the folder issue these commands
+To deploy the application on your local machine, use commandpromt/bash to locate your project folder. Then make sure port 3000 is free to use, if not change the port in docker-compose.yml. From inside the folder issue these commands
 ```
   docker-compose build
 ```
@@ -57,13 +57,13 @@ The following command needs to be ran from another prompt than where the docker-
 Under comes a description of how we worked with different parts of the project. And the result from this.
 
 * **Database**
-In the project we have used postgres database run in own image on our computers and hosted by heroku on the uploaded version. Our tests is ran at a local sqlite database.
+In the project, we have used Postgres database run in own image on our computers. And on our Heroku uploaded site Heroku has also provided with Postgres. Our tests are running at a local sqlite database.
 
 ![alt text](https://00e9e64bac702135f6c789d4a40b1fd8da6743049265001015-apidata.googleusercontent.com/download/storage/v1/b/pg4300grp10b/o/direct-uploads%2Ftable.png?qk=AD5uMEu6I1pIjXS6xrjX63oomMuDDkUtasc_V-089HYkKZSyphPB-cW3sGnPATuAPUkrHQ5ZpmMIBsTVYEIz4bgEM5HFbKMfTHzf0M4HYS-wBJJ0xLf_qN_mcUQtH5TZyKD5mjO47sSaR1VS3zP0MGCSJadKaWVV9NJ8lkmKZH0-MktO9-rDtBrQdEjYswS3JQevNV43zfnIsVsL6_cHYYu-2plsTX5KdZRlMgsOO8oFdlEtioCvQxmk4ZonlkZyRZFkLcrXjevcDInzrFg86WO3p5XJkycj8H2Nrf-fg0ImBOp_YpMR7C9IHSdcP1Mg8MLyqtaHLw10fRTjeabz-Qs-dAPqstnjRIJ5Rza6a7DDllAxi8lf9hvETeha5iKl4sfmt_RTT3DznwCeqm0eJ-jf-DtAmOZfE7w1Cx2eOtRCFpu-wAayA4wiydm-M-7rCnntis2HoiwW47JSK4v9spUm7BU0KIwAg1KrIHzlXEaswNMS7ALW84If7wxrhPTp_jzoP1Ks6rAU-2FYKQkvvlM9UQULHxo_iBLvdUD_c9P_CbtA0gPwV6du6uoe83gwFW67ZJUTS9RTyR3Sja6tBvToP0hxyg_S4Sn9xk7TR3ofgdGuhikWTOeREYxL-BfTI6WVdOBS8xZ-Vc-Qfp4VACGFemgy_f_d6upXhoKjBPwTW1Q9ex62ZpYnn_5JQLeELhmBBvqXsXrMaViSeZPNf16EGqWzHlgyvhX5tGsKq3OYtOx5IayRMW568UKZOLZSsuitIA2HW-aoOufjBdK1XqUF2QC1JwAB8FhmAQbQ8YO-feohUIQaDOA "Database model")
 * **Controllers**
-We have implementet a total of 9 controllers divived on these 7 tables. The two others is one specialcreated (custom) for welcomepage and one for session.
+We have implemented a total of 9 controllers divided on these 7 tables. The two others is one created (custom) for welcome page and one for session.
 * **Use of Docker**
-From the beginning of the project we decided we wanted both Docker and Heroku up and running on all members computers. Both rails and the postgres database runs as images. This is how our docker-compose.yml looks like:
+From the beginning of the project we decided we wanted both Docker and Heroku up and running on all members computers. Both rails and the Postgres database runs as images. This is how our docker-compose.yml looks like:
 ```
 version: '2'
 services:
@@ -84,7 +84,9 @@ services:
 ```
 
 * **Use of Heroku**
-Same as with Docker, we used Heroku from the beginning. Our Heroku is connected to Git and automatically updates our running version.* AJAX
+Same as with Docker, we used Heroku from the beginning. Our Heroku is connected to Git and automatically updates based on Git.
+* **AJAX**
+We use AJAX to automatically update the comment section once an user have posted a post.
 * **Use of propper CSS and Javascript**
 something
 * **Hashing and salting**
@@ -101,7 +103,7 @@ class User < ApplicationRecord
   end
  ```
 * **Testing**
-We did had fair enough focus on testing, we wanted the test cases to be as good as possible. The model testing went quite good but integration tests and system tests was way more difficult then we thought
+We used quite a lot time on writing tests, the model tests are quite complete with good coverage. The integration tests were more difficult and we only managed to write some. Also tried to write some system tests in browser, but that kind of failed.
 * **Login**
 * **Session**
 something
@@ -109,7 +111,7 @@ something
 
 * **Different user rights**
 We have implmented three different usergroups: user, moderator and admin. 
-One example of the diffrence of rights between user and admin is in book/1 (show.html) where only admin can edit a book but everyone can go back
+One example of the diffrence of rights between user and admin is in book/1 (show.html) where only admin can edit a book but everyone can go back.
 ```
   <% if current_admin %>
   <%= link_to 'Edit', edit_book_path(@book) %> |
@@ -117,7 +119,7 @@ One example of the diffrence of rights between user and admin is in book/1 (show
   <%= link_to 'Back', _back_url %>
 ```
 * **Search**
-We have implemented a searchfunction that allows you to search for books based on title. This search is not case-sensitive. The results will show on the frontpage.
+We have implemented a search function that allows you to search for books based on title. This search is not case-sensitive. The results will show on the frontpage.
 
 * **Categories has and belongs to many books**
 A book must have one and can have many categories, meanwhile a category can have many books. This creates a many-to-many relationship which we solved in the following way:
@@ -144,7 +146,7 @@ schema.rb:
   ```
 
 * **Validation**
-All models has been given validations. These focus on a width specter of validations, from length and uniqueness to format and confirmation. Example on this is:
+All models have been given validations. These focus on a width specter of validations, from length and uniqueness to format and confirmation. Most of these has also been tested with models testing. Example of this validation is:
 ```
 class Book < ApplicationRecord
   ...
@@ -174,7 +176,7 @@ end
 Dealing with the imageupload from form to Google Cloud.
 
 ### Google-api-client
-Due to Heroku working on different dynos, images uploaded by user will be reset on every new upload to Heroku - which will reset all previous updated dato - to prevent this we only save a link in user's table to an imagelocation saved on Google Cloud. The config for that looks like this:
+Due to Heroku working on different dynos, images uploaded by user will be reset on every new upload to Heroku - which will reset all previous updated data - to prevent this we only save a link in user's table to an image location saved on Google Cloud. The config for that looks like this:
 ```
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/google'
