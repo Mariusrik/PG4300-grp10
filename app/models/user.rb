@@ -9,7 +9,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates_format_of :email, :with =>  /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates_format_of :password_digest, :with => /(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/, on: :create, message: 'Your password must contain at least one number and be 8 or more characters long.'
-
+  validates_length_of :name, :maximum => 50
+  validates_length_of :email, :maximum => 75
 
   def self.authenticate(email, password)
     user = find_by_email(email)

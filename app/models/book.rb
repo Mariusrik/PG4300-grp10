@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   mount_uploader :image, BookUploader
   validates_presence_of :title, :description, :categories
   validates_uniqueness_of :title
+  validates_length_of :title, :maximum => 80
+  validates_length_of :description, :maximum => 25000
 
 
 
