@@ -16,5 +16,4 @@ class CategoryTest < ActiveSupport::TestCase
     thirdCategory = Category.create(name: "myCategory")
     assert_not thirdCategory.valid?
   end
-
 end

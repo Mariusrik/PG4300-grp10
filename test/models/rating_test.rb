@@ -4,6 +4,7 @@ class RatingTest < ActiveSupport::TestCase
 
   def setup
     @book = books(:one)
+    @book_two = books(:two)
 
     @category = categories(:one)
 
@@ -11,7 +12,8 @@ class RatingTest < ActiveSupport::TestCase
   end
 
   test "rating can't be saved without score" do
-    rating = Rating.new(user_id: @user.id, book_id: @book.id)
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
+    rating = Rating.new(user_id: user.id, book_id: @book.id)
     assert rating.invalid?
 
     rating.score = 5
@@ -19,7 +21,8 @@ class RatingTest < ActiveSupport::TestCase
   end
 
   test "rating can't be saved without a book" do
-    rating = Rating.new(user_id: @user.id, score: 5)
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
+    rating = Rating.new(user_id: user.id, score: 5)
     assert rating.invalid?
 
     rating.book_id = @book.id
@@ -27,17 +30,19 @@ class RatingTest < ActiveSupport::TestCase
   end
 
   test "rating can't be saved without a user" do
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
     rating = Rating.new(book_id: @book.id, score: 5)
     assert rating.invalid?
 
-    rating.user_id = @user.id
+    rating.user_id = user.id
     assert rating.valid?
   end
 
   test "rating is deleted when book is deleted" do
     newBook = @book
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
 
-    rating = Rating.new(user_id: @user.id, book_id: newBook.id, score: 5)
+    rating = Rating.new(user_id: user.id, book_id: newBook.id, score: 5)
     assert rating.valid?
 
     Book.destroy(newBook.id)
@@ -50,7 +55,7 @@ class RatingTest < ActiveSupport::TestCase
     user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIs@valid.mail")
     assert user.valid?
 
-    rating = Rating.create(user_id: user.id, book_id: @book.id, score: 5)
+    rating = Rating.create(user_id: user.id, book_id: @book_two.id, score: 5)
     assert rating.valid?
 
     User.destroy(user.id)
@@ -60,16 +65,16 @@ class RatingTest < ActiveSupport::TestCase
   end
 
   test "created_at is automaticly added when rating is created" do
-    rating = Rating.new(user_id: @user.id, book_id: @book.id, score: 5)
+    user = User.create(name: "validName", password_digest: "validPassword123", email: "thisIsAnother@valid.mail")
+    rating = Rating.new(user_id: user.id, book_id: @book_two.id, score: 5)
     assert rating.valid?
 
     assert_nil rating.created_at
     assert_nil rating.updated_at
 
-    rating = Rating.create(user_id: @user.id, book_id: @book.id, score: 5)
+    rating = Rating.create(user_id: user.id, book_id: @book_two.id, score: 5)
 
     assert_not_nil rating.created_at
     assert_not_nil rating.updated_at
   end
-
 end

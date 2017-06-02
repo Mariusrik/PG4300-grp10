@@ -77,9 +77,4 @@ class UserTest < ActiveSupport::TestCase
 
     assert_not_nil user.password_salt
   end
-
 end
-
-=begin - Missing tests:
-  checking validation of image (carrierwave kinda does this so idk)
-=end
