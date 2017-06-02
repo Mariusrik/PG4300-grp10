@@ -71,5 +71,4 @@ class CommentTest < ActiveSupport::TestCase
     assert_not_nil comment.created_at
     assert_not_nil comment.updated_at
   end
-
 end
