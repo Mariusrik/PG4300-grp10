@@ -198,6 +198,9 @@ end
 ```
 
 
+##  Individual Contribution
+
+
 ## Authors
 * **Andreas Ødegaard**
 * **Marius Rikheim**
